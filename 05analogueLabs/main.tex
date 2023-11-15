@@ -1,0 +1,46 @@
+\documentclass{article}
+
+% Packages for formatting and styling
+\usepackage{geometry} % Adjust page margins
+\usepackage{titlesec} % Customize section titles
+\usepackage{graphicx} % Include figures
+\usepackage{caption}  % Customize captions
+\usepackage{amsmath}  % Math formatting
+\usepackage{siunitx}  % SI units
+\usepackage{float}    % Figure placement
+\usepackage{listings} % Code listings
+\usepackage{hyperref} % Hyperlinks
+\usepackage{color}    % Colors for code listings
+
+% Define custom colors
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+
+% Configure page margins
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% Customize section titles
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Title and author information
+\title{APPLIED ANALOGUE ELECTRONICS LAB REPORT}
+\author{SHAWAL MBALIRE}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\begin{abstract}
+    This is the abstract section of your lab report. Provide a brief summary of the objectives, methods, and key findings of your experiments.
+\end{abstract}
+
+\section{Introduction}
+% Your introduction content goes here.
+
+\input{one.tex}
+\input{two.tex}
+
+\end{document}
