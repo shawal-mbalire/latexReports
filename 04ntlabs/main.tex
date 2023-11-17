@@ -9,13 +9,19 @@
 \usepackage{siunitx}  % SI units
 \usepackage{float}    % Figure placement
 \usepackage{listings} % Code listings
-\usepackage{hyperref} % Hyperlinks
+% \usepackage{hyperref} % Hyperlinks
 \usepackage{color}    % Colors for code listings
 \usepackage{pgfplots} % Graphs
 \usepackage{hhline}   % Table placement
 \usepackage{circuitikz} % Circuits
+\usepackage{fancyhdr} % Headers and footers
+\usepackage{lastpage} % Last page reference
 
 \geometry{a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm}
+\pagestyle{fancy}
+\fancyfoot[L]{Shawal Mbalire GROUP 8}
+\fancyfoot[C]{\thepage~of \pageref{LastPage}}
+\fancyfoot[R]{21/U/0851}
 
 \title{
     \begin{figure}[H]
@@ -37,8 +43,28 @@
 \begin{document}
 
 \maketitle
-\vfil
 \begin{center}
+
+    GROUP 8 MEMBERS
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{REG NO.} & \textbf{STUDENT NAME}\\
+        \hline
+        & NANKUNDA DORAH & \\
+        \hline
+        & MABANGI PATRICIA SARAH & \\
+        \hline
+        & AGABA TIMOTHY TRAVIS & \\
+        \hline
+        & DIING MALUETH MAKAUCH & \\
+        \hline
+        & ATUHAIRWE GILBERT & \\
+        \hline
+        & SIMBWA MALE SIMON PETER & \\
+        \hline
+        21/U/0851 & SHAWAL MBALIRE & \\
+        \hline
+    \end{tabular}
     MR NTEGE ROBINSON
 \end{center}
 
