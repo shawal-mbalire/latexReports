@@ -1,19 +1,254 @@
-
-\section{Experiment 2: [Title of Experiment 2]}
+\newpage
+\section{Experiment 2: Superposition of A.C and D.C. Voltages in linear and Non-linear Circuits}
 \subsection{Objective}
-% Describe the objective of the second experiment.
+To demonstrate the effect of applying ac and dc voltages to the same circuit simultaneously.
 
-\subsection{Methods}
-% Describe the experimental methods, equipment, and procedures used in the second experiment.
+\subsection {Instruments}
+\begin{itemize}
+\item Oscilloscope
+\item Low voltage DC power supply
+\item 12V center tapped transformer
+\item 1k$\Omega$ resistor
+\item Diode
+\end{itemize}
 
-\subsection{Results}
-% Present the results of the second experiment.
+\subsection{Linear circuits - Demonstration of Superposition}
+\subsubsection*{Theory}
+The superposition theorem states that the response in any branch of a linear circuit with multiple independent sources is the algebraic sum of the responses caused by each independent source acting alone, while all other independent sources are turned off. The superposition theorem is used to solve circuits by hand by breaking the circuit into smaller parts and analyzing each part individually. The superposition theorem is also used in circuit simulation software such as SPICE for the same purpose.
+The superposition theorem is a fundamental principle in linear circuit analysis that simplifies the analysis of complex circuits. It states that in a linear circuit containing multiple independent sources, the response (voltage or current) at any element is equal to the algebraic sum of the responses caused by each independent source acting alone, with all other sources turned off.
+\subsubsection*{Statement of the Superposition Theorem}
+Consider a linear circuit with multiple independent sources. Let \(S_1, S_2, \ldots, S_n\) be the independent sources, and \(R\) be the response (voltage or current) at a specific element in the circuit.
+The total response \(R_{\text{total}}\) at the element is given by the sum of the responses caused by each source individually:
+\[
+R_{\text{total}} = R_{S_1} + R_{S_2} + \ldots + R_{S_n}
+\]
+where \(R_{S_i}\) is the response due to the \(i\)-th source acting alone, with all other sources turned off.
+\subsubsection*{Applicability}
+The superposition theorem is applicable only to linear circuits, where the circuit elements exhibit linear relationships between voltage and current. It is particularly useful in simplifying the analysis of circuits with multiple sources, allowing engineers to focus on individual sources and their effects.
+\subsubsection*{Significance}
+The superposition theorem provides a powerful tool for simplifying circuit analysis, especially in circuits with multiple sources. By breaking down a complex circuit into simpler sub-circuits, engineers can better understand and design electronic systems with improved accuracy.
+
+\subsubsection*{Procedure}
+Construct the circuit in figure 1 \\
+\begin{circuitikz}
+    \draw (0,0) to[V, v=$V_{\text{dc}}$] (0,2) % DC power supply
+                to[transformer, t=$T$, o-] (3,2) % Center-tapped transformer
+                to[R, l=$1 \, \text{k}\Omega$, v=$V_{\text{out}}$, -*] (3,0); % Resistor
+    \draw (3,2) -- (6,2) % Right side of transformer
+                to[short, o-] (6,0); % Ground
+\end{circuitikz}
+\textbf{4.1.2} Coonect the primary of the transformer to the 50Hz, 240V mains. Do not turn the dc voltage on yet but connect the supply into the circuit \\
+
+NOTE: The dc supply must be well bypassed with capacitors. However if a reegulated supply is used, the bypass capacitors are not necessary. \\
+
+\textbf{4.1.3} Measure and record the ac voltage V on the VTVM and observe the voltage V, accross the 1k$\Omega$ resistor on the scope. Sketch the waveform observed ( atleast 2 copies). You are advised to calibrate the vertical scale of the oscilloscope at 5 volts per division. Record and measure the peak to peak ac voltage accross R. \\
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{AC Signal Plot}
+    \label{fig:ac_signal}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{V accross R}
+    \label{fig:ac_signal}
+\end{figure}
+
+\textbf{4.1.4} Turn off the ac power supply leaving the transformer secondary connected. Apply 12V dc to terminals X-Y. Measure and record the  dc voltage accross R. \\
+
+\textbf{4.1.5} Now with the 12V dc still applied to the circuit, apply 240V ac to the transformer primary again. Measure the dc voltage accross R, observe the waveform of the voltage accross R on the scope sketch the waaveform observed What is the peak to peak voltage across R measured
+
+NB: In sketching the waveform for Vo make sure to include both ac and dc components. \\
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+            ymin=-2,
+            ymax=14,
+        ]
+        \addplot[blue,smooth] {sin(deg(x)) + 11.6};  % AC signal + DC value
+        \legend{AC Signal + DC Value}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{AC Signal Superposed with DC Value}
+    \label{fig:ac_dc_signal}
+\end{figure}
+
+\textbf{4.1.6} Now with both ac and dc applied, readjust the dc voltage to 5 volts and measure Vdc and Vac Sketch the waveform for Vo observed on the scope use the same
 
 \subsection{Discussion}
-% Discuss the results and their implications for the second experiment.
+\subsubsection*{State whether  the dc level has any significant effect on the part of value of the ac voltage}
+\subsubsection*{What happenss to the dc level when the ac voltage is turned off?}
+\subsubsection*{What basic property of linear circuits is demonstrated by this experiment?}
+\subsubsection*{State this principle and briefly explain what it means}
 
-\section{Conclusion}
-% Summarize the key findings of both experiments and their overall implications.
+\subsection{Non-linear circuits}
 
-\section{References}
-% List your references using BibTeX or manually.
+\subsubsection*{Theory}
+The superposition theorem is a fundamental concept in linear circuit analysis, allowing for the simplification of complex circuits with multiple independent sources. However, it is crucial to understand that superposition is valid only for linear circuits, where the relationship between voltage and current is linear. In nonlinear circuits, components exhibit non-linear behavior, and applying superposition directly may lead to inaccuracies.
+\subsubsection*{Nonlinear Components}
+Nonlinear components, such as diodes and transistors, introduce non-linear relationships between voltage and current. Unlike resistors, these components do not follow Ohm's law, making the application of superposition challenging.
+To investigate the limitations of the superposition theorem in nonlinear circuits, consider a circuit with a nonlinear element, such as a diode. Design the circuit to include multiple independent sources and resistors along with the nonlinear component.
+\subsubsection*{Significance}
+This experiment aims to highlight the limitations of applying superposition to nonlinear circuits. By comparing the superposition-based predictions with actual measurements, you can illustrate the impact of non-linear elements on the accuracy of the superposition theorem.
+
+
+\subsubsection*{Procedure}
+\textbf{5.1.1} Construct the circuit in figure 2. \\
+\textbf{5.1.2} Connect the primary of the transformer to the 50Hz, 240V mains. Do not turn the dc voltage on yet but connect the supply into the circuit. \\
+\textbf{5.1.3} With the vertical input of thr oscilloscope calibvrated to 5V per division, connect thew scope common to M and the probe to L. Sketch the wave form observed (atleast 2 cycles) \\
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{AC Signal Plot}
+    \label{fig:ac_signal_non}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{V accross R}
+    \label{fig:ac_signal-non_R}
+\end{figure}
+\textbf{5.1.4} with the scope common still at N, connect the probe to M. Sketch the waveform observed \\
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{V accross R}
+    \label{fig:ac_signal-non_R}
+\end{figure}
+\textbf{5.1.5} Next move the scope common to M and connect the probe to L. Sketch the waveform observed \\
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{V accross R}
+    \label{fig:ac_signal-non_R}
+\end{figure}
+\textbf{5.1.6} Now with the ac still applied to the circuit, apply 5V dc  accross the terminals L-N.
+
+\textbf{5.1.7} With the scope common still at N, connect the probe to L. Sketch the waveform observed. \\
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{V accross R}
+    \label{fig:ac_signal-non_R}
+\end{figure}
+\textbf{5.1.8} Next move the scope common to M and connect the probe to L. Sketch the waveform observed. \\
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Time},
+            ylabel={Amplitude},
+            % legend style={at={(0.5,-0.15)}, anchor=north},
+            grid=major,
+            domain=0:2*pi,
+            samples=100,
+        ]
+        \addplot[blue,smooth] {sin(deg(x))};
+        \legend{AC Signal}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{V accross R}
+    \label{fig:ac_signal-non_R}
+\end{figure}
+\subsubsection*{Discussion}
+
+
+\subsection*{Conclusion}
+
+While the superposition theorem is a powerful tool in linear circuit analysis, its direct application to nonlinear circuits can lead to errors. Understanding these limitations is crucial for accurate analysis and design of circuits containing nonlinear components.
