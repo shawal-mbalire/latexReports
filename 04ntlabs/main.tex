@@ -12,40 +12,37 @@
 \usepackage{hyperref} % Hyperlinks
 \usepackage{color}    % Colors for code listings
 \usepackage{pgfplots} % Graphs
-% \usepackage{tikz}   % Graphs
 \usepackage{hhline}   % Table placement
 \usepackage{circuitikz} % Circuits
 
-% Define custom colors
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\geometry{a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm}
 
-% Configure page margins
-\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
-
-% Customize section titles
-\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-
-% Title and author information
-\title{NETWORK THEORY LAB REPORT}
-\author{SHAWAL MBALIRE}
+\title{
+    \begin{figure}[H]
+        \centering
+        \includegraphics{../mak_logo.png}
+    \end{figure}
+    COLLEGE OF ENGINEERING, DESIGN, ART AND TECHNOLOGY\\
+    DEPARTMENT OF ELECTRICAL AND COMPUTER ENGINEERING\\
+    SCHOOL OF ENGINEERING\\
+    BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING\\
+    NETWORK THEORY LAB REPORT\\
+}
+\author{
+    SHAWAL MBALIRE\\
+    21/U/0851
+}
 \date{\today}
 
 \begin{document}
 
 \maketitle
-\newpage
-
-\begin{abstract}
-    This is the abstract section of your lab report. Provide a brief summary of the objectives, methods, and key findings of your experiments.
-\end{abstract}
-
-\section{Introduction}
-% Your introduction content goes here.
+\vfil
+\begin{center}
+    MR NTEGE ROBINSON
+\end{center}
 
 \input{one.tex}
-
 \input{two.tex}
 
 \end{document}
