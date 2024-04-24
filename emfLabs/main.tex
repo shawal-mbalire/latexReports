@@ -238,12 +238,15 @@
         \begin{tikzpicture}
         \begin{axis}[
           width=\linewidth,
-          height=0.6\linewidth,
+          height=\linewidth,
           xmin=0, xmax=41,
-          xtick=1,
-
+          xtick distance=1,
+          minor x tick num = 4,
+          minor y tick num = 1,
+          xmajorgrids,
+          ymajorgrids,
           ymin=0, ymax=0.85,
-          ytick=0.05,
+          ytick distance=0.05,
           xlabel=Length (mm),
           ylabel=Voltage ,
           legend pos=north east
@@ -374,14 +377,20 @@
         \textbf{Plot for mismatched Load 2 with 6dB attenuation Load and short circuit}
         \begin{tikzpicture}
         \begin{axis}[
-        width=\linewidth,
-        height=0.6\linewidth,
-        xmin=0, xmax=0.40,
-        ymin=0.5, ymax=0.8,
-        xlabel=Length (mm),
-        ylabel=Column 2,
-        legend pos=north west
-        ]
+            width=\linewidth,
+            height=\linewidth,
+            xmin=0, xmax=41,
+            xtick distance=1,
+            minor x tick num = 4,
+            minor y tick num = 1,
+            xmajorgrids,
+            ymajorgrids,
+            ymin=0, ymax=0.85,
+            ytick distance=0.05,
+            xlabel=Length (mm),
+            ylabel=Voltage ,
+            legend pos=north east
+          ]
         
         \addplot [smooth, thick, blue] table {
         0.00 0.757
@@ -509,14 +518,20 @@
         \textbf{Plot for Matched load with termination load}
         \begin{tikzpicture}
         \begin{axis}[
-          width=\linewidth,
-          height=0.6\linewidth,
-          xmin=0, xmax=0.40,
-          ymin=0.58, ymax=0.76,
-          xlabel=Length (mm),
-          ylabel=Column 2,
-          legend pos=north west
-        ]
+            width=\linewidth,
+            height=\linewidth,
+            xmin=0, xmax=41,
+            xtick distance=1,
+            minor x tick num = 4,
+            minor y tick num = 1,
+            xmajorgrids,
+            ymajorgrids,
+            ymin=0, ymax=0.85,
+            ytick distance=0.05,
+            xlabel=Length (mm),
+            ylabel=Voltage ,
+            legend pos=north east
+          ]
         
         \addplot [smooth, thick, blue] table {
         0.00 0.752
