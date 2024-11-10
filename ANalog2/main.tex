@@ -392,186 +392,191 @@
 
     \subsubsection{Operation}
 
-When a sine wave voltage \( v(t) = V_M \sin(\omega t) \) is applied to the input of the Class C amplifier, the current \( i(t) \) through the load \( R_L \) is non-zero only during the conduction period, which corresponds to a conduction time \( T = t_2 - t_1 \). This results in a conduction angle \( \phi = \phi_2 - \phi_1 \), where \( \phi = \omega T \) is the angular conduction.
+    When a sine wave voltage \( v(t) = V_M \sin(\omega t) \) is applied to the input of the Class C amplifier, the current \( i(t) \) through the load \( R_L \) is non-zero only during the conduction period, which corresponds to a conduction time \( T = t_2 - t_1 \). This results in a conduction angle \( \phi = \phi_2 - \phi_1 \), where \( \phi = \omega T \) is the angular conduction.
 
-In a Class C amplifier, the conduction angle \( \phi \) is less than 180 degrees, and it is influenced by the transistor’s biasing. As a result, the amplifier only conducts during a portion of the input signal cycle, which leads to non-linear operation and high efficiency.
+    In a Class C amplifier, the conduction angle \( \phi \) is less than 180 degrees, and it is influenced by the transistor’s biasing. As a result, the amplifier only conducts during a portion of the input signal cycle, which leads to non-linear operation and high efficiency.
 
-In static conditions, when no signal is applied, the Class C amplifier does not dissipate any power, i.e., \( I_{CQ} = 0 \). However, when the input signal \( v(t) \) is applied, the power dissipated during dynamic conditions depends on the amplitude of the signal and the conduction angle \( \phi \). Reducing the conduction angle increases the efficiency, which can approach 100\%, but there is a practical limit. If the conduction angle \( \phi \) is reduced too much, the overall power output decreases, which limits the achievable efficiency.
+    In static conditions, when no signal is applied, the Class C amplifier does not dissipate any power, i.e., \( I_{CQ} = 0 \). However, when the input signal \( v(t) \) is applied, the power dissipated during dynamic conditions depends on the amplitude of the signal and the conduction angle \( \phi \). Reducing the conduction angle increases the efficiency, which can approach 100\%, but there is a practical limit. If the conduction angle \( \phi \) is reduced too much, the overall power output decreases, which limits the achievable efficiency.
 
-The current waveform \( i(t) \) that flows through the load is a non-sinusoidal periodic function, consisting of a series of pulses. The period of this function is equal to the period of the input signal. Using a Fourier series, the load current can be expressed as a sum of sine waves:
-\[
-i(t) = I_{CQ} + i_1 \sin(\omega t) + i_2 \sin(2 \omega t) + \dots
-\]
-If a resonant circuit is used as the load, tuned to one of the harmonics of the fundamental frequency, the Class C amplifier can act as a frequency multiplier. Higher-order harmonics' amplitudes decrease rapidly as frequency increases, so the primary amplification occurs at the fundamental frequency, \( f = \frac{\omega}{2 \pi} \).
+    The current waveform \( i(t) \) that flows through the load is a non-sinusoidal periodic function, consisting of a series of pulses. The period of this function is equal to the period of the input signal. Using a Fourier series, the load current can be expressed as a sum of sine waves:
+    \[
+    i(t) = I_{CQ} + i_1 \sin(\omega t) + i_2 \sin(2 \omega t) + \dots
+    \]
+    If a resonant circuit is used as the load, tuned to one of the harmonics of the fundamental frequency, the Class C amplifier can act as a frequency multiplier. Higher-order harmonics' amplitudes decrease rapidly as frequency increases, so the primary amplification occurs at the fundamental frequency, \( f = \frac{\omega}{2 \pi} \).
 
-Although Class C amplifiers operate with high efficiency, they are typically used for amplifying a single frequency and are unsuitable for linear amplification. For this reason, they are often used with resonant loads to extract either the fundamental frequency or one of its harmonics, depending on the specific application.
+    Although Class C amplifiers operate with high efficiency, they are typically used for amplifying a single frequency and are unsuitable for linear amplification. For this reason, they are often used with resonant loads to extract either the fundamental frequency or one of its harmonics, depending on the specific application.
 
     \subsection{Experiments}
-    \subsubsection{Amplifier with resistive load}
-    \subsubsection{Procedures}
+
+    \subsubsection{Amplifier with Resistive Load}
+
+    \paragraph{Procedures}
     \begin{enumerate}
-        \item Set Vcc adjustable power supply to 12V.
-        \item Insert jumpers $J_1, J_3, J_{10}, J_{11}, J_{15}, J_{17}, J_{26}$, to produce the circuit of figure:\ref{fig:B32.2}
+        \item Set the Vcc adjustable power supply to 12V.
+        \item Insert jumpers $J_1$, $J_3$, $J_{10}$, $J_{11}$, $J_{15}$, $J_{17}$, and $J_{26}$ to produce the circuit shown in Figure \ref{fig:B32.2}.
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\linewidth]{analogue2_2.jpeg}
-            \caption{amplifer with resistive load}
+            \caption{Amplifier with resistive load}
             \label{fig:B32.2}
         \end{figure}
-        \item adjust $R_{V3}$, and consider how the bias voltage on the base of transistor $T_1$ varies
-        \item connect the function generator at terminals 1 and ground with a sine 20 KHz and 1$V_{pp}$
-        \item reduce the frequency of the input signal, and check the resulting signal on base of $T_1$ with oscilloscope
-        \item adjust $R_{V3}$ to set the voltage on the base of $T_1$ to 0V
-        \item set the sine input signal to 20 kHz
-        \item increase the amplitude of the input signal, observing the signal on the collector of $T_1$ and across $R_7$
-        \item in particular, analyze the case in which the positive peak of the input voltage, applied across the base of $T_1$, exceeds the threshold 0.6-0.7V of the transistor
-        
-    \textit{When the input voltage exceeds the transistor threshold voltage it starts conducting generating small voltage pulses ac
-    s the resistance $R_7$. As the conduction angle is less smaller than 180 degrees, the amplifier is in class C}
+        \item Adjust $R_{V3}$ and observe how the bias voltage on the base of transistor $T_1$ varies.
+        \item Connect the function generator to terminals 1 and ground, set to a sine wave of 20 kHz and 1 V$_{pp}$.
+        \item Gradually reduce the frequency of the input signal and monitor the resulting signal on the base of $T_1$ using an oscilloscope.
+        \item Adjust $R_{V3}$ to set the base voltage of $T_1$ to 0V.
+        \item Set the input signal to 20 kHz.
+        \item Increase the amplitude of the input signal while observing the signal on the collector of $T_1$ and across $R_7$.
+        \item In particular, analyze the case when the positive peak of the input voltage exceeds the threshold voltage of the transistor (0.6-0.7V). \\
+        \textit{When the input voltage exceeds the transistor’s threshold voltage, it begins conducting, generating small voltage pulses across the resistance $R_7$. Since the conduction angle is less than 180 degrees, the amplifier operates in Class C.}
+        \item Adjust $R_{V3}$ to negatively bias the base of $T_1$ and check the behavior of the voltage across $R_7$.
+        \item Vary $R_{V3}$ and note how the conduction angle of the output signal changes.
+    \end{enumerate}
 
-        \item adjust $R_{V3}$ to negatively bias the base of $T_1$ and check the behavior of the voltage across $R_7$
-        \item vary $R_{V3}$, and note the conduction angle of the output signal
-    \end{enumerate}
-    \subsubsection{Questions}
+    \paragraph{Questions}
     \begin{enumerate}
-        \item How does the amplitude vary with frequency?\\
-            \(\square\) it remains constant \\
-            \(\square\) it is always zero \\
-            \(\square\) it decreases \\
-            \(\textcolor{black}{\blacksquare}\) it increases \\
-            \(\square\) it has a square-wave behavior\\
-            \textit{The inductance $L_1$ separates the bias circuit, consisting of $R_{V3}$ and $R_5$, from the ac input signal. In fact the impedance of an inductance is proportional to frequency, so the higher the frequency, the higher will be reactance of $L_1$, and the better will be the separation. The capacitor $C_4$ is used to short-circuit any remaining signals across $L_1$.}
-        \item What happens to the output voltage on $R_7$ as the base bias of Tl is continuously reduced?\\
-            \(\square\) the peak amplitudes of the.output signal increase\\
-            \(\textcolor{black}{\blacksquare}\) the amplitude of the output peaks decrease\\
-            \(\square\) the output signal frequency progressively increases\\
-            \(\square\) there is no output change\\
-            \(\square\) the phase shift between the input and output signal progressively increases
-        \item Comparing the conduction angles obtained with different bias conditions, we can say that:\\
-            \(\square\) the conduction angle stays unchanged\\
-            \(\square\) the conduction angle increases when the voltage on the base of $T_1$ decreases\\
-            \(\textcolor{black}{\blacksquare}\) the conduction angle decreases when the voltage on the base of $T_1$ decreases
+        \item How does the amplitude vary with frequency? \\
+        \(\square\) It remains constant \\
+        \(\square\) It is always zero \\
+        \(\square\) It decreases \\
+        \(\textcolor{black}{\blacksquare}\) It increases \\
+        \(\square\) It has a square-wave behavior \\
+        \textit{The inductance $L_1$ separates the bias circuit (comprising $R_{V3}$ and $R_5$) from the AC input signal. The impedance of an inductance increases with frequency, so as the frequency rises, the reactance of $L_1$ increases, improving the separation. The capacitor $C_4$ shorts out any remaining signals across $L_1$.}
+
+        \item What happens to the output voltage across $R_7$ as the base bias of $T_1$ is continuously reduced? \\
+        \(\square\) The peak amplitudes of the output signal increase \\
+        \(\textcolor{black}{\blacksquare}\) The amplitude of the output peaks decreases \\
+        \(\square\) The output signal frequency progressively increases \\
+        \(\square\) There is no output change \\
+        \(\square\) The phase shift between the input and output signal progressively increases
+
+        \item Comparing the conduction angles obtained with different bias conditions, we can say that: \\
+        \(\square\) The conduction angle stays unchanged \\
+        \(\square\) The conduction angle increases when the base voltage of $T_1$ decreases \\
+        \(\textcolor{black}{\blacksquare}\) The conduction angle decreases when the base voltage of $T_1$ decreases
     \end{enumerate}
-    \subsubsection{Tuned load}
-    \subsubsection{Procedures}
+
+    \subsubsection{Tuned Load}
+
+    \paragraph{Procedures}
     \begin{enumerate}
-        \item Remove jumper $J_{17}$ and insert $J_{16}$, to produce the circuit of figure:\ref{fig:B32.3}
+        \item Remove jumper $J_{17}$ and insert $J_{16}$ to produce the circuit shown in Figure \ref{fig:B32.3}.
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\linewidth]{analogue3_3.jpeg}
-            \caption{tuned load}
+            \caption{Tuned load}
             \label{fig:B32.3}
         \end{figure}
-        \item adjust RV3 to obtain a base bias voltage of 0 V
-        \item calculate the resonant frequency of the tuned circuit L2-C6, using the relation $f_o = \frac{1}{2\pi \sqrt{LC}}$, if $L_2 = 4\mu H$ and $C_6 = 680nF$
-        \item apply a sine signal of $2V_{pp}$-amplitude and frequency $f_o$ to the input
-        \item examine the wave-form of the signal across $R_7$ (proportional to the current through the transistor) and also the signal on the collector
-        \item adjust the input frequency to obtain the max. amplitude on the $T_1$ collector ( terminal 3)
-        
-    \textit{When the frequency of the input signal is equal to the resonant
-    frequency of the LC circuit, the output signal amplitude is max and the waveform is nearly distortionless. The amplifier is said to be tuned.}
-        \item slowly decrease the input signal frequency, until it is halved, while observing the behavior of the output signal on the $T_1$ collector (terminal 13)
-        \item in particular, analyze what happens when the input frequency near $\frac{f_o}{2}$
-    \\
-    \\
-    As the frequency decreases, the amplitude of the output voltage slowly drops if $\frac{f_o}{2}<f<f_o$, the output has a behavior which is not sinusoidal anymore. Continuing to reduce the frequency, the second harmonic of the input signal clearly appears
-    \\
-    \\
-    As the output frequency in this case is double the input signal
-    frequency, the circuit can be used as frequency multiplier.
+        \item Adjust $R_{V3}$ to obtain a base bias voltage of 0V.
+        \item Calculate the resonant frequency of the tuned circuit $L_2$-$C_6$ using the formula: \\
+        \[
+        f_o = \frac{1}{2\pi \sqrt{LC}}
+        \]
+        where \( L_2 = 4 \mu H \) and \( C_6 = 680 \, \text{nF} \).
+        \item Apply a sine signal with 2 V$_{pp}$ amplitude and the resonant frequency \( f_o \) to the input.
+        \item Examine the waveform of the signal across $R_7$ (proportional to the current through the transistor) and the signal on the collector.
+        \item Adjust the input frequency to achieve maximum amplitude on the collector of $T_1$ (terminal 3). \\
+        \textit{When the input signal frequency matches the resonant frequency of the LC circuit, the output amplitude is maximized, and the waveform becomes nearly distortion-free. The amplifier is said to be tuned.}
+        \item Gradually decrease the input signal frequency until it is halved, while observing the output signal on the collector of $T_1$ (terminal 3).
+        \item Specifically, analyze what happens when the input frequency approaches \( \frac{f_o}{2} \). \\
+        As the frequency decreases, the output voltage amplitude gradually drops. If \( \frac{f_o}{2} < f < f_o \), the output becomes increasingly non-sinusoidal. As the frequency continues to decrease, the second harmonic of the input signal becomes prominent. \\
+        Since the output frequency is double the input frequency, the circuit functions as a frequency multiplier.
     \end{enumerate}
-    \subsubsection{Questions}
+
+    \paragraph{Questions}
+
     \textbf{Turn switch $S_5$ "ON"}
+
     \begin{enumerate}
-        \item Noting the change in amplifier operation, we can say that:\\
-            \(\textcolor{black}{\blacksquare}\) the tuned output circuit has been changed\\
-            \(\square\) the base bias has been changed\\
-            \(\square\) the resistance $R_7$ has been reduced\\
-            \(\square\) the power supply voltage VCC has been decreased\\
-            \(\square\) the transistor $T_1$ has been short-circuited between base and collector\\
-            
-    \textbf{Turn $S_5$ "OFF"}
+        \item Noting the change in amplifier operation, we can say that: \\
+        \(\textcolor{black}{\blacksquare}\) The tuned output circuit has been changed \\
+        \(\square\) The base bias has been changed \\
+        \(\square\) The resistance $R_7$ has been reduced \\
+        \(\square\) The power supply voltage \(V_{CC}\) has been decreased \\
+        \(\square\) The transistor $T_1$ has been short-circuited between base and collector
     \end{enumerate}
+
+    \textbf{Turn $S_5$ "OFF"}
+
     \subsection{Summary Questions}
     \begin{enumerate}
-        \item The operation in class Cof an amplifier is characterized by conduction angles:\\
-        
-    \(\square\) greater than 180 degrees\\
-    \(\square\) equal to 180 degrees\\
-    \(\textcolor{black}{\blacksquare}\) less than 180 degrees\\
-    \(\square\) equal to 360 degrees\\
-    \(\square\) equal to 270 degrees
+        \item The operation in Class C of an amplifier is characterized by conduction angles: \\
+        \(\square\) Greater than 180 degrees \\
+        \(\square\) Equal to 180 degrees \\
+        \(\textcolor{black}{\blacksquare}\) Less than 180 degrees \\
+        \(\square\) Equal to 360 degrees \\
+        \(\square\) Equal to 270 degrees
 
-    \item Class C amplification produces a signal distortion which is:\\
-    \(\square\) very small\\
-    \(\textcolor{black}{\blacksquare}\) very big\\
-    \(\square\) similar to the one produced by class A\\
-    \(\square\) similar to the one produced by class B\\
-    \(\square\) similar to the one produced by class AB
+        \item Class C amplification produces a signal distortion which is: \\
+        \(\square\) Very small \\
+        \(\textcolor{black}{\blacksquare}\) Very large \\
+        \(\square\) Similar to the distortion produced by Class A \\
+        \(\square\) Similar to the distortion produced by Class B \\
+        \(\square\) Similar to the distortion produced by Class AB
 
-    \item The efficiency of a class C amplifier :\\
-    \(\textcolor{black}{\blacksquare}\) depends on the conduction angle and takes very high values on average\\
-    \(\square\) is always very low\\
-    \(\square\) is always equal to 1\\
-    \(\square\) is close to 25\% \\
-    \(\square\) is equal to 50\% \\
+        \item The efficiency of a Class C amplifier: \\
+        \(\textcolor{black}{\blacksquare}\) Depends on the conduction angle and takes very high values on average \\
+        \(\square\) Is always very low \\
+        \(\square\) Is always equal to 1 \\
+        \(\square\) Is close to 25\% \\
+        \(\square\) Is equal to 50\%
 
-    \item A tuned load in an amplifiers operating in class C can be used toproduce:\\
-
-    \(\square\) a frequency divider\\
-    \(\textcolor{black}{\blacksquare}\) a frequency multiplier\\
-    \(\square\) a half-wave rectifier\\
-    \(\square\) a voltage stabilizer\\
-    \(\square\) a current limiter
+        \item A tuned load in an amplifier operating in Class C can be used to produce: \\
+        \(\square\) A frequency divider \\
+        \(\textcolor{black}{\blacksquare}\) A frequency multiplier \\
+        \(\square\) A half-wave rectifier \\
+        \(\square\) A voltage stabilizer \\
+        \(\square\) A current limiter
     \end{enumerate}
 
     \section{Errors}
 
-    Errors refer to the deviations or differences between the measured value and the true value of a quantity.
+    Errors refer to the deviations or differences between the measured value and the true value of a quantity. These discrepancies can arise from various sources, including equipment limitations, environmental factors, measurement methods, or human errors, all of which can affect the accuracy and reliability of results.
 
-    Errors can arise due to limitations in the equipment, environmental factors, the method of measurement, or human factors, and they impact the accuracy and reliability of results. 
     \subsection{Sources of Errors}
+    Errors in experimental setups can stem from the following sources:
+
     \begin{enumerate}
-        \item Oscillators: Potential sources of errors include:
+        \item \textbf{Oscillators:} Potential sources of errors include:
         \begin{enumerate}
-            \item Increased resistance within the connecting probes/wires
-            \item Power fluctuations within some components
-            \item Loose connections
+            \item Increased resistance within connecting probes and wires
+            \item Power fluctuations within certain components
+            \item Loose or unreliable connections
         \end{enumerate}
-        \item Class C Amplifiers: Potential sources of errors include:
+        \item \textbf{Class C Amplifiers:} Potential sources of errors include:
         \begin{enumerate}
-            \item biasing issues
-            \item component tolerances
-            \item temperature effects
-            \item mismatched load
-            \item loose connections
+            \item Biasing issues
+            \item Component tolerances
+            \item Temperature effects on components
+            \item Mismatched load impedances
+            \item Loose or unstable connections
         \end{enumerate}
     \end{enumerate}
-    \subsection{Error minimization}
+
     \subsection{Error Minimization}
 
-    To improve the accuracy of the experimental results and reduce errors, specific steps can be taken in circuit design and setup. The following are recommended practices for minimizing errors in different components used in the experiment:
+    To improve the accuracy of experimental results and minimize errors, several steps can be taken during circuit design, setup, and testing. The following practices are recommended:
 
     \begin{enumerate}
-        \item \textbf{Oscillators}
+        \item \textbf{Oscillators:}
         \begin{itemize}
-            \item \textbf{Limit Resistive Elements:} Reducing the number of resistive elements in the circuit helps minimize potential sources of resistance-based error and improves signal stability.
-            \item \textbf{Ensure Tight Connections:} Loose connections can cause fluctuating voltages and other errors in the oscillator circuit. Ensuring all connections are secure reduces noise and improves the reliability of the signal.
+            \item \textbf{Limit Resistive Elements:} Minimize the number of resistive components in the oscillator circuit to reduce resistance-based errors and improve signal stability.
+            \item \textbf{Ensure Tight Connections:} Loose connections in the circuit can cause fluctuating voltages and introduce noise. Ensuring all connections are secure and stable will reduce errors and enhance signal integrity.
         \end{itemize}
         
-        \item \textbf{Class C Amplifiers}
+        \item \textbf{Class C Amplifiers:}
         \begin{itemize}
-            \item \textbf{Calibrate Devices Accurately:} Regular calibration of measuring devices and components within the Class C amplifier circuit is essential to minimize calibration-related errors, which can lead to inaccuracies in gain and frequency response.
+            \item \textbf{Calibrate Devices Regularly:} Regular calibration of measuring instruments and components within the Class C amplifier circuit is crucial to avoid calibration errors, which could lead to inaccuracies in gain, frequency response, and overall circuit performance.
         \end{itemize}
     \end{enumerate}
 
     \section{Conclusion}
 
-    By constructing and analyzing these circuits, we gained hands-on experience with signal generation and amplification. The experiments provided insights into the importance of minimizing errors through careful circuit design and calibration.
+    In this experiment, constructing and analyzing oscillator and Class C amplifier circuits provided valuable hands-on experience with signal generation and amplification. The experiments highlighted the importance of minimizing errors through careful circuit design and regular calibration.
 
-    Overall, this practical approach enhanced our understanding of analouge electronics, reinforcing theoretical knowledge and highlighting the applications and limitations of oscillators and Class C amplifiers in real-world scenarios.
+    By engaging with these practical tasks, we deepened our understanding of analogue electronics, reinforcing theoretical concepts and gaining insights into the applications and limitations of oscillators and Class C amplifiers in real-world scenarios.
 
     \nocite{*}
     \bibliographystyle{ieeetr}
     \bibliography{ref}
+
 \end{document}
