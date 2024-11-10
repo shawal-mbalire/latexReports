@@ -8,7 +8,6 @@
 \usepackage{algorithm}
 \usepackage{setspace}
 \usepackage{color}
-\usepackage{geometry}
 \usepackage{tabularx}
 \usepackage{url}
 \usepackage{cite}
@@ -23,9 +22,14 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{datetime}
+\usepackage{lastpage}
+\usepackage[top=2cm,bottom=2cm,right=2cm,left=2cm]{geometry}
 
-\pagestyle{fancy}
-\fancyfoot[C]{\thepage}
+\pagestyle{fancy}   
+\lhead{Applied Analogue Electronics}
+\rhead{Lab Report}
+\cfoot{Page \thepage of \pageref{LastPage}}
+
 \usetikzlibrary{fit}
 \usetikzlibrary{positioning}
 \usetikzlibrary{trees}
@@ -33,60 +37,63 @@
 
 \begin{document}
 
-    \begin{titlepage}
-        \begin{center}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.5\textwidth]{mak_logo.png} % Adjust image width as needed
-            \end{figure}
-            \vspace{20pt}
-            \large COLLEGE OF ENGINEERING, DESIGN, ART AND TECHNOLOGY\\
-            \vspace{10pt}
-            DEPARTMENT OF ELECTRICAL AND COMPUTER ENGINEERING\\
-            \vspace{20pt}
-            BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING\\
-            \vspace{20pt}
-            SHAWAL MBALIRE 21/U/0851\\
-            \vspace{20pt}
-
-            \textbf{\Large APPLIED ANALOGUE ELECTRONICS LAB REPORT}\\
-            \vspace{30pt}
-            \begin{table}[H]
-            \centering
-            \begin{tabular}{|llc|}
-            \hline
-            \multicolumn{3}{|c|}{\textbf{Group Members}}                                                                     \\ \hline
-            \multicolumn{1}{|l|}{\textbf{S/N}} & \multicolumn{1}{l|}{\textbf{Name}}           & \textbf{Registration Number} \\ \hline
-            \multicolumn{1}{|l|}{1}            & \multicolumn{1}{l|}{Amutuhire Judith}        & 22/U/5773                    \\ \hline
-            \multicolumn{1}{|l|}{2}            & \multicolumn{1}{l|}{Aine Mugabe Hillary}     & 22/U/5683                    \\ \hline
-            \multicolumn{1}{|l|}{3}            & \multicolumn{1}{l|}{Aransiola Oyindamola Serena} & 21/X/20031/PS                \\ \hline
-            \multicolumn{1}{|l|}{4}            & \multicolumn{1}{l|}{Mbalire Shawal} & 21/U/0851                \\ \hline
-            \multicolumn{1}{|l|}{5}            & \multicolumn{1}{l|}{Keyuyne Jordie} & 20/U/0449                \\ \hline
-            \multicolumn{1}{|l|}{6}            & \multicolumn{1}{l|}{Ankwasa Derrick} & 22/U/5780                \\ \hline
-            \multicolumn{1}{|l|}{7}            & \multicolumn{1}{l|}{Kasigwa Isabella} & 22/U/6075                \\ \hline
-            \end{tabular}
-            \end{table}
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{mak_logo.png} % Adjust image width as needed
+        \vfill
         
-            \vspace{40pt}
+        \large COLLEGE OF ENGINEERING, DESIGN, ART AND TECHNOLOGY\\
+        \vspace{10pt}
+        DEPARTMENT OF ELECTRICAL AND COMPUTER ENGINEERING\\
+        \vspace{20pt}
+        BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING\\
+        \vspace{20pt}
+        
+        \textbf{SHAWAL MBALIRE 21/U/0851}\\
+        \vspace{20pt}
+        
+        \textbf{\Large APPLIED ANALOGUE ELECTRONICS LAB REPORT}\\
+        \vfill
+        
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|llc|}
+            \hline
+            \multicolumn{3}{|c|}{\textbf{Group Members}} \\ \hline
+            \textbf{S/N} & \textbf{Name} & \textbf{Registration Number} \\ \hline
+            1 & Amutuhire Judith & 22/U/5773 \\ \hline
+            2 & Aine Mugabe Hillary & 22/U/5683 \\ \hline
+            3 & Aransiola Oyindamola Serena & 21/X/20031/PS \\ \hline
+            4 & Mbalire Shawal & 21/U/0851 \\ \hline
+            5 & Keyuyne Jordie & 20/U/0449 \\ \hline
+            6 & Ankwasa Derrick & 22/U/5780 \\ \hline
+            7 & Kasigwa Isabella & 22/U/6075 \\ \hline
+        \end{tabular}
+        \end{table}
+        
+        \vfill
 
-            \normalsize Instructor: Mr. Robinson Ntege\\
-            \vspace{30pt}
-
-            \normalsize \date{\today}
-            \vspace{40pt}
-
-        \end{center}
-    \end{titlepage}
+        Instructor: Mr. Robinson Ntege\\
+        \vspace{30pt}
+        
+        \normalsize \today
+    \end{center}
+\end{titlepage}
 
     \tableofcontents
     \newpage
 
     \listoffigures
-    % \addcontentsline{toc}{section}{List of Figures}
     \newpage
 
     \pagenumbering{arabic}
+
+
+
+
+
     \section{Experiment to investigate of the Operation of RC Oscillators.}
+
     \subsection{Objectives}
     \begin{enumerate}
         \item To understand the Working Principle of RC Oscillators
@@ -103,7 +110,9 @@
         \item 1 2.2nF, 1nF capacitors
         \item 2 12nF capacitors
     \end{enumerate}
+
     \subsection{Basic Theory}
+
     \subsubsection{RC Oscillators}
     RC oscillators are fundamental circuits used to generate sine wave signals in analog electronics. These oscillators rely on an RC network, where resistors (R) and capacitors (C) create a phase shift that enables oscillation at a particular frequency. This type of oscillator, commonly referred to as a phase-shift oscillator, produces a sine wave output by using regenerative feedback. In this configuration, the RC network provides a feedback path with a phase shift of 180 degrees, which complements the additional 180 degrees phase shift introduced by an inverting amplifier (often an operational amplifier or transistor). When the total phase shift reaches 360 degrees (or 0 degrees), sustained oscillations occur.
 
@@ -141,6 +150,7 @@
     By understanding the principles and configurations of RC and Wien bridge oscillators, engineers can effectively design circuits that generate precise and stable sine wave signals across a wide range of frequencies.
 
     \subsection{Procedures}
+
     \subsubsection{Procedure 1 - RC oscillator}
     \begin{enumerate}
         \item Construct the circuit of figure:\ref{fig:1} below
@@ -201,7 +211,9 @@
         $$ f = 2.95kHz$$
         
     \end{enumerate}
+
     \subsubsection{Procedure 2 - The wein bridge oscillator}
+
     \begin{enumerate}
         \item Construct the circuit of the figure:\ref{fig:2} below
         \begin{figure}[H]
@@ -220,10 +232,11 @@
             \caption{wave form for wein bridge oscillator}
             \label{fig:enter-label}
         \end{figure}
-        \item Compare the waveform of the phase shift generated and the Wien bridge oscillator\\
-        \\
-        \textbf{\textit{The wave form produced are very similar yet produced with different setups}}\\
+        \item Compare the waveform of the phase shift generated and the Wien bridge oscillator
+        
+        \textbf{\textit{The wave form produced are very similar yet produced with different setups}}
     \end{enumerate}
+
     \subsubsection{Procedure 3 - The square wave}
     \begin{enumerate}
         \item Construct the circuit of the figure:\ref{fig:3} below
@@ -238,8 +251,9 @@
     $$ R_3 = 4.7k \Omega$$
     $$ C_1 = 1nF $$
     \subsubsection{Questions}
-    What values of the resistor $R_1$ and $C_1$ would make an output of 10OkH?\\
-    \\
+
+    What values of the resistor $R_1$ and $C_1$ would make an output of 10OkH?
+
     \[
     f = \frac{1}{2 \pi RC}
     \]
@@ -261,6 +275,8 @@
     \[
     \therefore \quad R = 10 \, \text{k}\Omega \quad \text{and} \quad C \approx 1.59 \, \text{nF} \quad \text{will produce} \quad f \approx 10 \, \text{kHz}.
     \]
+
+
 
     \section{Experiment to Demonstrate Amplification with Resistive and Tuned Loads using Class C Amplifiers}
     \subsection{Objectives}
