@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
+\usepackage{amsmath}
 \usepackage{pgfplots}
 \usepackage{datetime}
 \usepackage{lastpage}
@@ -40,30 +41,34 @@
         \textbf{\Large MACHINES AND DRIVES I LAB REPORT}\\
         \vspace{20pt}
 
-        % \begin{table}[H]
-        %     \centering
-        %     \begin{tabular}{|llc|}
-        %         \hline
-        %         \multicolumn{3}{|c|}{\textbf{Group Members}} \\ \hline
-        %         \multicolumn{1}{|l|}{\textbf{S/N}} & \multicolumn{1}{l|}{\textbf{Name}} & \textbf{Registration Number} \\ \hline
-        %         \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{Amutuhire Judith} & 22/U/5773 \\ \hline
-        %         \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{Achola Loy Abor} & 22/U/5637 \\ \hline
-        %         \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{Agasha Moreen} & 22/U/5659 \\ \hline
-        %         \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{Aine Mugabe Hillary} & 22/U/5683 \\ \hline
-        %         \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{Ainembabazi Irene} & 22/U/21209/PSA \\ \hline
-        %         \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{Ajolo Precious Mercy} & 22/U/5696 \\ \hline
-        %         \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{Amara Alex} & 22/U/5752 \\ \hline
-        %         \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{Abraham Kizza} & 22/U/21313 \\ \hline
-        %         \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{Anena Cuthbert Wanitho} & 20/U/16043 \\ \hline
-        %         \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{Ankwasa Derrick} & 22/U/5780 \\ \hline
-        %         \multicolumn{1}{|l|}{11} & \multicolumn{1}{l|}{Aransiola Oyindamola S O} & 21/X/20031/PS \\ \hline
-        %         \multicolumn{1}{|l|}{12} & \multicolumn{1}{l|}{Arinaitwe Elastus} & 22/U/5798 \\ \hline
-        %         \multicolumn{1}{|l|}{13} & \multicolumn{1}{l|}{Asiimwe Martha Serena} & 22/U/5814 \\ \hline
-        %         \multicolumn{1}{|l|}{14} & \multicolumn{1}{l|}{Atuhura Joshua Wamani} & 22/U/5833 \\ \hline
-        %         \multicolumn{1}{|l|}{15} & \multicolumn{1}{l|}{Bagoole Asadi} & 22/U/5858 \\ \hline
-        %     \end{tabular}
-        % \end{table}
-
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|l|c|l|}
+                \hline
+                \multicolumn{3}{|c|}{\textbf{GROUP MEMBERS}} \\
+                \hline
+                \textbf{Name} & \textbf{Program} & \textbf{Registration Number} \\
+                \hline
+                Shawal Mbalire  & BELE & 21/U/0851 \\
+                Namta Dorcus Druscilla & BELE & 22/U/6587 \\
+                Kayiwa Philip & BELE & 22/U/6115 \\
+                Kigenyi Emmanuel & BELE & 22/U/6140 \\
+                Kisaale Kenneth & BELE & 22/U/6161 \\
+                Muadi Kassim Ismail & BELE & 22/U/3383/PSA \\
+                Mwanje Umar & BELE & 22/U/6443 \\
+                Nsumba Vicent & BELE & 22/U/6730 \\
+                Nuwamanya Pancras & BELE & 22/U/6746 \\
+                Odong Ivan Joe & BELE & 22/U/21259/PSA \\
+                Onyait Richard & BELE & 22/U/21263/PS \\
+                Ssebadduka Marvin & BELE & 22/U/6889 \\
+                Swalik Natumanya & BELE & 22/U/6688 \\
+                Kyeyune Jordie & BELE & 20/U/0449 \\
+                Mukisa Joshua & BELE & 22/U/6367 \\
+                Kigozi Stuart James & BELE & 22/U/21224/PSA \\
+                Yiga Hakim & BELE & 22/U/3966/PSA \\
+                \hline
+            \end{tabular}
+        \end{table}
        
         \vspace{20pt}
 
@@ -86,192 +91,337 @@
 \newpage
 
 
-\chapter{Experiment to determine the transformation ratio and the equivalent circuit parameters of a single phase transformer.}
+\chapter{Experiment to Determine the Transformation Ratio and the Equivalent Circuit Parameters of a Single-Phase Transformer}
 
 \section{Objectives}
+The objectives of this experiment are as follows:
 \begin{enumerate}[label=\roman*.]
-    \item To determine the transformation ratio, k.
-    \item To determine the equivalent circuit parameters.
+    \item \textbf{To determine the transformation ratio, \(k\):} The transformation ratio of a transformer, typically denoted by \(k\), is the ratio of the primary voltage to the secondary voltage (or vice versa) under no-load conditions. This ratio is crucial as it helps determine the efficiency of voltage transformation between primary and secondary windings. For an ideal transformer, \(k\) is equal to the turns ratio between the primary and secondary windings.
+    
+    \item \textbf{To determine the equivalent circuit parameters:} The equivalent circuit of a transformer is used to represent its internal impedance, losses, and magnetizing characteristics in a simplified form. By finding these parameters, we can approximate the performance characteristics, including voltage regulation and efficiency, of the transformer under load conditions. This includes components such as winding resistances, leakage reactances, and magnetizing impedance.
 \end{enumerate}
 
 \section{List of Apparatus}
+The following apparatus were used to conduct the experiment:
 \begin{enumerate}[label=\roman*.]
-    \item Single phase transformer
-    \item Variac
-    \item AC ammeters and voltmeters
-    \item Wattmeter
+    \item \textbf{Single-phase transformer:} The core component of the experiment, this transformer has primary and secondary windings that enable voltage transformation. The transformer chosen is rated to match the experiment's voltage requirements.
+    
+    \item \textbf{Variac:} A variac, or variable AC transformer, is used to gradually increase or decrease the input voltage to the transformer in a controlled manner. It helps in safely applying and adjusting voltage levels for measurements without causing sudden changes that could damage the equipment.
+    
+    \item \textbf{AC ammeters and voltmeters:} These are used to measure the AC current and voltage at the primary and secondary sides of the transformer. They are essential for obtaining accurate measurements of the transformation ratio and equivalent circuit parameters.
+    
+    \item \textbf{Wattmeter:} A wattmeter measures the real power consumed by the transformer. This is particularly useful for determining the core losses and copper losses in the transformer, which are necessary for calculating the equivalent circuit parameters.
 \end{enumerate}
 
 \section{Theory}
-It is well known that the equivalent circuit of a single phase transformer can be approximately represented as shown below. The parameters $r_{0}$ and $x_{0}$ which take into account the two components of the no load current can be determined by conducting an open circuit test. The parameters $r_{1}$ and $x_{1}$ are determined from the short circuit test.
+The performance and characteristics of a single-phase transformer can be analyzed using an equivalent circuit model. This model simplifies the transformer’s behavior into a series of components that represent its various internal losses and impedance. By conducting specific tests, we can determine the values of these parameters, which provide insights into the transformer’s efficiency, voltage regulation, and other operational characteristics.
+
+In the equivalent circuit model shown in Figure~\ref{fig_1}, the parameters are defined as follows:
+\begin{itemize}
+    \item \textbf{\( r_0 \) and \( x_0 \)}: These represent the core loss components, which include hysteresis and eddy current losses. These parameters are derived from the no-load or open circuit test, where the secondary winding is left open, and a small voltage is applied to the primary winding. During this test, the core losses dominate, as there is minimal current in the winding, allowing us to isolate these parameters.
+
+    \item \textbf{\( r_1 \) and \( x_1 \)}: These parameters represent the equivalent series resistance and leakage reactance of the transformer windings. They are primarily determined through the short-circuit test, where the secondary winding is shorted and a reduced voltage is applied to the primary winding until rated current flows. This test is conducted under conditions where the winding losses dominate, enabling the calculation of \( r_1 \) and \( x_1 \).
+
+    \item \textbf{Open Circuit Test}: The open circuit test is performed by applying the rated voltage to the primary winding with the secondary side left open. This allows for measurement of the core losses and helps us find \( r_0 \) and \( x_0 \), which correspond to the core resistance and reactance.
+
+    \item \textbf{Short Circuit Test}: The short circuit test is conducted by shorting the secondary winding and applying a reduced voltage to the primary winding. This test helps measure the copper losses (due to winding resistance) and leakage reactances, allowing us to determine \( r_1 \) and \( x_1 \) accurately.
+
+\end{itemize}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figure_1_1.jpeg}
-    \caption{Single phase transformer equivalent circuit}
+    \caption{Single-phase transformer equivalent circuit}
     \label{fig_1}
 \end{figure}
 
+The equivalent circuit provides a way to predict the transformer’s voltage regulation and efficiency under various load conditions. By using the open circuit and short circuit test results, we can calculate these parameters, which help us model and understand the performance characteristics of the transformer in practical applications.
+
 \section{Procedures}
+
 \subsection{Ratio Test}
+This test is conducted to determine the transformation ratio \( k \) of the transformer. The transformation ratio is the ratio of the primary voltage to the secondary voltage and is fundamental in assessing the transformer's ability to convert voltages.
+
 \begin{enumerate}
-    \item Connect the circuit shown in \ref{fig_2} below. 
+    \item Connect the circuit as shown in Figure~\ref{fig_2} below, with the variac connected to the primary side of the transformer to control the input voltage.
+    
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\linewidth]{figure_2_2.jpeg}
-        \caption{Single phase  transformer ratio test}
+        \caption{Single-phase transformer ratio test setup}
         \label{fig_2}
     \end{figure}
-    \item Vary the output of the variac from 30V to 90V in steps of 90V.
-    \item Measure and record the voltage on the low voltage and high voltage sides of the transformer.
-    \item Record the results.
+    
+    \item Vary the output of the variac from 30V to 90V in steps of 10V, allowing for multiple data points to better assess the transformation ratio across a range of input voltages.
+    
+    \item Measure and record the voltage on the low voltage (LV) and high voltage (HV) sides of the transformer using accurate AC voltmeters. This data will provide the basis for calculating the transformation ratio.
+    
+    \item Calculate \( k = V_2 / V_1 \) for each voltage step to determine the transformation ratio at various levels. Record these values as shown in the table below.
+
 \end{enumerate}
 
 \begin{table}[H]
     \centering
-    \caption{Table of results for ratio test}
-    \begin{tabular}{|l|l|l|}
+    \caption{Power Measurements and Ratios}
+    \begin{tabular}{|c|c|c|c|}
     \hline
-    LV Voltage , $V_{1}$ & HV Voltage, $V_{2}$ & $k=V_{2}/V_{1}$ \\ \hline
-    30              & 60             & 2.00    \\ \hline
-    40              & 80             & 2.00    \\ \hline
-    50              & 100            & 2.00    \\ \hline
-    60              & 130            & 2.17    \\ \hline
-    70              & 150            & 2.14    \\ \hline
-    80              & 170            & 2.13    \\ \hline
-    90              & 185            & 2.06    \\ \hline
+    $V_1 (\text{V})$ & $W_{\text{input}} (\text{W})$ & $W_{\text{output}} (\text{W})$ & $\eta = \frac{W_{\text{output}}}{W_{\text{input}}}$ \\ \hline
+    30 & 62  & 2.07 \\ \hline
+    40 & 81  & 2.03 \\ \hline
+    50 & 107 & 2.14 \\ \hline
+    60 & 126 & 2.10 \\ \hline
+    70 & 146 & 2.08 \\ \hline
+    80 & 164 & 2.05 \\ \hline
+    90 & 180 & 2.00 \\ \hline
     \end{tabular}
     \end{table}
+    
+
+The variation in \( k \) across the voltage range provides insights into the transformer's performance and potential deviations from ideal behavior due to internal losses or non-linearities in the magnetic core.
 
 \subsection{Open Circuit Test}
+The open circuit test is conducted to determine the core loss parameters of the transformer, which include hysteresis and eddy current losses. These losses are inherent in the magnetic core and are dependent on the applied voltage and frequency.
+
 \begin{enumerate}
-    \item Make connections as shown in \ref{fig_3} below.
+    \item Make the necessary connections as shown in Figure~\ref{fig_3}, ensuring the high voltage (HV) side of the transformer is left open while the low voltage (LV) side is connected to the variac.
+
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\linewidth]{figure_3_3.jpeg}
-        \caption{Single phase transformer test}
+        \caption{Single-phase transformer open circuit test setup}
         \label{fig_3}
     \end{figure}
-    \item Apply rated voltage at the low voltage side of the transformer by varying the output of the variac.
-    \item Measure and record the corresponding power input, W, on the LV side, the power factor and the voltage on the HV side.
-    \item The procedure is repeated for different input voltages.
-    \item The results are recorded in the table below.
 
+    \item Apply a gradually increasing voltage at the LV side using the variac, taking care to increase the voltage to the rated voltage of the transformer. This helps ensure that the test simulates real operating conditions and yields accurate core loss values.
+    
+    \item Measure and record the power input \( P_0 \), current \( I_0 \), and voltage \( V_2 \) at the LV and HV sides respectively. The power input \( P_0 \) measured by the wattmeter represents the core losses.
+    
+    \item Repeat the procedure at different input voltage levels to observe the effect of voltage variation on core losses and magnetizing current. Record these readings as shown in the table below.
 
-\begin{table}[H]
-    \centering
-    \caption{Table of results for open circuit test}
-    \begin{tabular}{|l|l|l|l|l|}
-    \hline
-    $V_{1}$ & $P_{0}$  & $I_{0}$  & $V_{2}$  & $cos\Phi_{0}=P_{0}/(V_{1}I_{0})$ \\ \hline
-    30 & 10  & 1.5 & 48  & 0.2222          \\ \hline
-    40 & 50  & 4.3 & 150 & 0.2907          \\ \hline
-    50 & 210 & 18  & 162 & 0.2333          \\ \hline
-    55 & 360 & 37  & 180 & 0.1769          \\ \hline
-    \end{tabular}
-    \end{table}
-    \item Determine the open circuit parameters of your circuit\\
-    \\
-    \textbf{\textit{The open circuit parameters are tabulated in the table above}}
+    \begin{table}[H]
+        \centering
+        \caption{Voltage, Current, Power, and Efficiency Measurements}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $V_1$ (V) & $I_0$ (A) & $P_0$ (W) & $n_2$ (rpm) & $\Phi_0 = \frac{P_0}{V_1 I_0}$ \\ \hline
+        30        & 0         & 0         & 66          & 0.000                          \\ \hline
+        40        & 0         & 0         & 78          & 0.000                          \\ \hline
+        50        & 5         & 0.5       & 101         & 0.200                          \\ \hline
+        60        & 10        & 1.6       & 124         & 0.104                          \\ \hline
+        \end{tabular}
+        \end{table}
+        
+
+    \item Determine the open circuit parameters \( r_0 \) and \( x_0 \) based on the measurements recorded in the table above. The values of \( r_0 \) and \( x_0 \) provide insights into the core losses and magnetizing reactance, which are essential components of the equivalent circuit.
+    
+    \textbf{\textit{The open circuit parameters are calculated using the recorded data and are presented in the table above.}}
 \end{enumerate}
+
 \subsection{Short Circuit Test}
+The short circuit test is conducted to determine the winding resistance (\( r_1 \)) and leakage reactance (\( x_1 \)) of the transformer. These parameters are crucial in assessing the transformer’s impedance under load and help predict its performance under rated conditions.
+
 \begin{enumerate}
-    \item Make the connections as shown in the \ref{fig_4} , with the LV side of the transformer short-circuited.
+    \item Connect the transformer as shown in Figure~\ref{fig_4}, with the low voltage (LV) side short-circuited. Ensure that all connections are secure to avoid any unsafe conditions.
+
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\linewidth]{figure_4_4.jpeg}
-        \caption{Short circuit single phase transformer tests}
+        \caption{Short circuit test setup for single-phase transformer}
         \label{fig_4}
     \end{figure}
-    \item Apply an input voltage, $V_{1}$ so that the rated current flows on the LV side of the transformer.
-    \item Measure and record the power input, $P_{SC}$, the power factor, and the corresponding current, $I$ on the HV.
-    \item Ensuring the input voltage does not exceed 8\% of the rated HV voltage.
-    \item THe procedure is repeated for different lower values of short circuit currents, $I_{SC}$.
-    \item The results are tabulated below.
+    
+    \item Gradually apply a small input voltage \( V_{1} \) on the high voltage (HV) side of the transformer using a variac until the rated current flows through the LV winding. It is important to limit the applied voltage to approximately 5-10\% of the transformer's rated voltage, as this is sufficient to produce the rated current without risking core saturation or damage.
+    
+    \item Measure and record the power input \( P_{SC} \), the corresponding current \( I \), and the power factor on the HV side. The power input \( P_{SC} \) represents the copper losses in the transformer windings under short-circuit conditions, allowing for the calculation of equivalent winding resistance.
+    
+    \item Ensure that the input voltage does not exceed approximately 8\% of the rated HV voltage to avoid overheating and maintain test accuracy.
+    
+    \item Repeat the procedure for lower values of short circuit currents \( I_{SC} \) by adjusting the input voltage. This allows for multiple data points to observe how the current and power losses vary with changes in voltage and current levels.
+    
+    \item Record the results in the table below for analysis.
+
+    \begin{table}[H]
+        \centering
+        \caption{Voltage, Current, Power, and Efficiency Measurements}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $V_1$ (V) & $I_a$ (A) & $P_a$ (W) & $R$ ($\Omega$) & $\Phi = \frac{P_a}{V_1 I_a}$ \\ \hline
+        2         & 0         & 1.6       & 1.8            & 0.000                          \\ \hline
+        4         & 10        & 9.0       & 4.7            & 0.532                          \\ \hline
+        6         & 25        & 13.2      & 6.6            & 0.631                          \\ \hline
+        8         & 40        & 14.5      & 8.2            & 0.610                          \\ \hline
+        10        & 65        & 19.0      & 10.2           & 0.637                          \\ \hline
+        12        & 90        & 22.5      & 12.9           & 0.581                          \\ \hline
+        14        & 115       & 26.5      & 14.8           & 0.555                          \\ \hline
+        16        & 150       & 30.5      & 16.5           & 0.568                          \\ \hline
+        18        & 195       & 35.0      & 18.5           & 0.586                          \\ \hline
+        20        & 230       & 38.5      & 20.2           & 0.569                          \\ \hline
+        \end{tabular}
+        \end{table}
+        
+
+    \item Comment on your results. Analyze the results to determine the short-circuit parameters of the transformer, specifically the equivalent series resistance \( r_1 \) and leakage reactance \( x_1 \), using the measured power and current values.
+
+    \textbf{\textit{Observations:}} For small variations in voltage, there is a significant increase in current, indicating the low impedance of the windings under short-circuit conditions. The increasing power factor values show the relationship between the applied voltage and the resulting short-circuit current. These values are crucial for estimating the internal losses and impedance of the transformer.
+    
+    \textbf{\textit{The short-circuit parameters are calculated from the recorded data and are presented in the table above.}}
+    \section{Calculation of  K}
+
+The K value of the data points \( 2.07, 2.03, 2.14, 2.10, 2.08, 2.05, 2.00 \) is calculated as:
+
+\[
+\text{K} = \frac{2.07 + 2.03 + 2.14 + 2.10 + 2.08 + 2.05 + 2.00}{7} = \frac{14.47}{7} \approx 2.07
+\]
+
+Thus, the average value is approximately \( 2.07 \).
+
+    \section{Open Circuit Parameters}
+
+\begin{enumerate}
+    \item \textbf{Core loss resistance referring to the LV side:}
+    \begin{equation}
+        R_{c(\text{LV})} = \frac{V_1^2}{P_0} = 360 \ \Omega
+    \end{equation}
+
+    \item \textbf{Core loss resistance referring to the HV side:}
+    \begin{equation}
+        R_{c(\text{HV})} = \left( \frac{N_2}{N_1} \right)^2 R_{c(\text{LV})} = 1440 \ \Omega
+    \end{equation}
+
+    \item \textbf{Magnetizing reactance referring to the LV side:}
+    \begin{equation}
+        X_{m(\text{LV})} = \frac{V_1}{\sqrt{I_0^2 - \left( \frac{P_0}{V_1} \right)^2}} = 37.705 \ \Omega
+    \end{equation}
+
+    \item \textbf{Magnetizing reactance referring to the HV side:}
+    \begin{equation}
+        X_{m(\text{HV})} = \left( \frac{N_2}{N_1} \right)^2 X_{m(\text{LV})} = 150.82 \ \Omega
+    \end{equation}
+\end{enumerate}
+
+    \section{Short Circuit Parameters}
+
+\begin{enumerate}
+    \item \textbf{Core loss resistance referring to the LV side:} 
+    \begin{equation}
+        R_{c(\text{LV})} = \frac{V_1^2}{P_c} = 1.739 \ \Omega
+    \end{equation}
+
+    \item \textbf{Core loss resistance referring to the HV side:}
+    \begin{equation}
+        R_{c(\text{HV})} = \left( \frac{N_2}{N_1} \right)^2 R_{c(\text{LV})} = 6.957 \ \Omega
+    \end{equation}
+
+    \item \textbf{Magnetizing reactance referring to the LV side:}
+    \begin{equation}
+        X_{m(\text{LV})} = \frac{V_1^2}{I_0^2 - \left( \frac{P_0}{V_1} \right)^2} = 1.204 \ \Omega
+    \end{equation}
+
+    \item \textbf{Magnetizing reactance referring to the HV side:}
+    \begin{equation}
+        X_{m(\text{HV})} = \left( \frac{N_2}{N_1} \right)^2 X_{m(\text{LV})} = 4.817 \ \Omega
+    \end{equation}
+\end{enumerate}
+
+\end{enumerate}
 
 
-\begin{table}[H]
-\centering
-    \caption{Table of results for short circuit tests}
-    \begin{tabular}{|l|l|l|l|l|}
-    \hline
-    $V_{1}$ & $I_{SC}$  & $P_{SC}$ & $I$    & $cos\Phi=P_{SC}/(V_{1}I)$ \\ \hline
-    2  & 0    & 0   & 0    & 0.0000         \\ \hline
-    4  & 2    & 0   & 1    & 0.0000         \\ \hline
-    6  & 8    & 5   & 4    & 0.2083         \\ \hline
-    8  & 11   & 15  & 5.2  & 0.3606         \\ \hline
-    10 & 14   & 25  & 7.5  & 0.3333         \\ \hline
-    12 & 17   & 40  & 9    & 0.3704         \\ \hline
-    14 & 20   & 60  & 10   & 0.4286         \\ \hline
-    16 & 24   & 80  & 12   & 0.4167         \\ \hline
-    18 & 26.5 & 110 & 13.5 & 0.4527         \\ \hline
-    20 & 30   & 130 & 15   & 0.4333         \\ \hline
-    \end{tabular}
-    \end{table}
-    \item Comment on your results. Determine the short circuit parameters of the transformer.\\
-    \\
-    \textbf{\textit{For small variation in voltages, there's a significant increase in the current. The short circuit parameters are tabulated in the table above}}
-\end{enumerate}  
 \chapter{Experiment to determine parameters and performance characteristics of Induction Motors.}
 \section{Objectives}
 \begin{enumerate}
-    \item To determine equivalent circuit parameters of the induction motor from measurements.
-    \item To predict the performance characteristics of the motor.
+    \item To determine the equivalent circuit parameters of the induction motor, including stator resistance, rotor resistance, and magnetizing reactance, by conducting no-load, blocked rotor, and load tests. These parameters provide insights into the electrical behavior of the motor and are essential for modeling its performance.
+    \item To predict the performance characteristics of the motor, such as torque, efficiency, and power factor, across different load conditions. This will involve using the equivalent circuit parameters derived from the tests to calculate expected motor behaviors and comparing these with experimental results to understand the motor's efficiency and suitability for various applications.
 \end{enumerate}
 
 \section{List of Apparatus}
 \begin{enumerate}
-    \item Power supply mod AV -1/V
-    \item 4 Variable resistors RC3-PT
-    \item Multifunctional digital instrument AZ VIP 10/EV 
-    \item Digital Torque and speed measurement unit Um-G1/EV 
-    \item 3 phase induction motor mod P-4/EV
+    \item \textbf{Power Supply (mod AV -1/V)}: Provides a stable and adjustable AC voltage source for powering the induction motor. This allows control over the voltage applied to the motor during no-load, blocked rotor, and load tests.
+    
+    \item \textbf{4 Variable Resistors (RC3-PT)}: Used to vary the resistance in the circuit, helping to simulate different load conditions on the motor during testing. This allows for control of current flow and the testing of motor response under varying loads.
+    
+    \item \textbf{Multifunctional Digital Instrument (AZ VIP 10/EV)}: Measures voltage, current, power, and power factor, providing accurate electrical parameter readings essential for calculating the motor’s equivalent circuit parameters and evaluating efficiency and performance.
+    
+    \item \textbf{Digital Torque and Speed Measurement Unit (Um-G1/EV)}: Measures the torque output and rotational speed of the motor, critical for determining the motor’s performance characteristics such as torque-speed relationship and efficiency.
+    
+    \item \textbf{3-Phase Induction Motor (mod P-4/EV)}: The main subject of the experiment, this motor will undergo various tests (no-load, blocked rotor, and load tests) to determine its electrical and performance characteristics, allowing for equivalent circuit modeling and performance analysis.
 \end{enumerate}
 
 \section{Theory}
-Induction motors operate by using a rotating magnetic field from the stator to induce currents in the rotor, generating torque. Key motor parameters—like stator and rotor resistances, reactances, and magnetizing reactance—are identified through standard tests: the no-load test, blocked rotor test, and load test. The no-load test evaluates magnetizing current and rotational losses, while the blocked rotor test (with the rotor prevented from rotating) is used to determine rotor and stator resistance and leakage reactances. The load test then assesses the motor’s efficiency, power factor, and torque-speed performance under actual load conditions.\\
-\\
-From these tests, an equivalent circuit model can be constructed, offering insights into the motor’s efficiency, slip, and torque characteristics. This model helps engineers predict motor behavior, optimize performance, and select the right motor for specific applications.
+Induction motors are widely used for their simplicity, reliability, and efficiency in various industrial applications. They operate by creating a rotating magnetic field in the stator windings, which induces a current in the rotor. This interaction generates a torque on the rotor, causing it to turn. However, the performance of an induction motor depends on several key parameters, which can be determined through specific tests and measurements.
+
+The equivalent circuit of an induction motor represents its electrical behavior and includes the following key components:
+\begin{itemize}
+    \item \textbf{Stator resistance} ($R_1$) and \textbf{stator leakage reactance} ($X_1$): Represent the resistance and reactance of the stator windings, which cause energy losses and affect the motor’s efficiency.
+    \item \textbf{Rotor resistance} ($R_2$) and \textbf{rotor leakage reactance} ($X_2$): Represent the resistance and reactance of the rotor windings, which contribute to energy losses, and are influenced by the slip of the motor.
+    \item \textbf{Magnetizing reactance} ($X_m$): Represents the reactance of the motor’s magnetic field, which links the stator and rotor. This parameter is crucial for determining the motor's magnetizing current and overall efficiency.
+\end{itemize}
+
+To accurately model the motor's performance, these parameters are determined through three common tests: the no-load test, the blocked rotor test, and the load test.
+
+\subsection{Tests for Determining Motor Parameters}
+
+\begin{itemize}
+    \item \textbf{No-Load Test}: Conducted by running the motor with no mechanical load applied to the rotor. This test measures the magnetizing current, which is responsible for producing the magnetic field in the motor, and the rotational losses. It helps determine the magnetizing reactance ($X_m$) and core losses.
+    
+    \item \textbf{Blocked Rotor Test}: In this test, the rotor is physically blocked from rotating, and the stator is supplied with a low voltage to produce the rated current. This test helps to determine the stator and rotor resistance ($R_1$, $R_2$) as well as the leakage reactances ($X_1$, $X_2$) by simulating the locked-rotor conditions, which occur when the motor starts or under heavy load conditions.
+    
+    \item \textbf{Load Test}: This test applies a known mechanical load to the motor and measures the motor’s output torque, speed, current, voltage, and power factor. It provides practical data to evaluate the motor’s efficiency, torque-speed performance, and power factor under normal operating conditions.
+\end{itemize}
+
+\subsection{Equivalent Circuit Model}
+Once the parameters from these tests are obtained, they can be used to build an equivalent circuit model of the motor. The equivalent circuit is a simplified representation of the motor’s electrical behavior, which includes the following components:
+\begin{itemize}
+    \item \textbf{Stator resistance} ($R_1$) and \textbf{stator leakage reactance} ($X_1$) in series.
+    \item \textbf{Rotor resistance} ($R_2$) and \textbf{rotor leakage reactance} ($X_2$) in parallel with the magnetizing reactance ($X_m$).
+    \item The mechanical power developed by the motor can be calculated using the torque and rotational speed data obtained from the load test, helping to evaluate the motor’s efficiency.
+\end{itemize}
+
+The equivalent circuit model allows engineers to predict the motor's performance in various operating conditions by calculating the efficiency, slip, and torque characteristics. This model is crucial for optimizing motor design, selection, and operation in specific applications, ensuring that motors perform efficiently under varying loads.
 
 \section{Procedure}
+
 \subsection{Light Running Test}
 \begin{enumerate}
-    \item Connect the machine as shown in the fig below.
+    \item Connect the machine as shown in the figure below.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{figure_5_5.jpeg}
+        \includegraphics[width=\linewidth]{figure_5_5.jpeg}
         \caption{Light running test: without load}
         \label{fig_5}
     \end{figure}
-    \item Start the motor by applying normal frequency, reduced voltage and gradually increase the input voltage to its rated value.
-    \item Note down the readings for voltage, current, power and speed at different voltages.
-    \item The results are tabulated.
-
+    \item Start the motor by applying normal frequency, reduced voltage, and gradually increase the input voltage to its rated value.
+    \item Note down the readings for voltage, current, power, and speed at different voltages.
+    \item The results are tabulated below.
 
 \begin{table}[H]
-\centering
-    \caption{Table of results for light running test}
-    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \centering
+    \caption{Table of Results with Calculations}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline
-    $V_{1}(V)$ & $I(A)$  & $W_{1}(W)$ & $W_{2}(W)$ & $W_{3}(W)$ & $n(rpm)$ & $\rho=(W_{1}-W_{2})/W_{1}$ \\ \hline
-    30    & 0.584 & 3.80  & 4.40  & 3.80  & 0      & -0.1579      \\ \hline
-    40    & 0.911 & 9.70  & 10.40 & 9.20  & 0      & -0.0722      \\ \hline
-    50    & 1.246 & 18.30 & 19.40 & 17.30 & 0      & -0.0601      \\ \hline
-    60    & 1.597 & 31.00 & 30.20 & 27.90 & 89     & 0.0258       \\ \hline
-    70    & 1.890 & 45.00 & 44.00 & 40.60 & 320    & 0.0222       \\ \hline
-    80    & 0.870 & 33.30 & 33.50 & 29.70 & 2601   & -0.0060      \\ \hline
-    90    & 0.673 & 27.50 & 29.20 & 24.80 & 2779   & -0.0618      \\ \hline
-    100   & 0.566 & 26.50 & 28.30 & 24.20 & 2839   & -0.0679      \\ \hline
-    110   & 0.523 & 27.20 & 27.10 & 23.00 & 2869   & 0.0037       \\ \hline
+    \(\text{V (V)}\) & \(\text{I (A)}\) & \(\text{W}_1 (\text{W})\) & \(\text{W}_2 (\text{W})\) & \(\text{W}_3 (\text{W})\) & n(rpm) & \(\rho = \frac{W_1 - W_2}{W_1}\) \\ \hline
+    30  & 0.612  & 4.6  & 4.5  & 5.8  & 0    & 0.0217   \\ \hline
+    40  & 0.920  & 10.2 & 10.2 & 11.2 & 0    & 0.00005  \\ \hline
+    50  & 1.254  & 19.2 & 19.6 & 21.4 & 33   & -0.0209  \\ \hline
+    60  & 1.550  & 29.9 & 30.1 & 33.3 & 42   & -0.00677 \\ \hline
+    70  & 1.880  & 44.5 & 45.9 & 49.1 & 288  & -0.0316  \\ \hline
+    80  & 0.925  & 33.9 & 34.1 & 36.2 & 2648 & -0.00599 \\ \hline
+    90  & 0.608  & 27.1 & 28.3 & 31.7 & 2765 & -0.0443  \\ \hline
+    100 & 0.533  & 26.1 & 27.4 & 30.1 & 2812 & -0.0498  \\ \hline
+    110 & 0.488  & 26.2 & 26.5 & 29.6 & 2837 & -0.0115  \\ \hline
     \end{tabular}
     \end{table}
-    \item Plot V against n.
+    
+    \item Plot Voltage ($V$) against Speed ($n$).
 \end{enumerate}
 
 \begin{tikzpicture}
     \begin{axis}[
         compat=1.18,
+        width=\linewidth, % Use the full width
         xlabel = $n(rpm)$,
         ylabel = $V(V)$,
+        xtick = {0, 89, 320, 2601, 2779, 2839, 2869}, % Customize x-axis ticks to avoid overlap
+        xticklabel style={rotate=45}, % Rotate labels for better fit
     ]
     \addplot [
         table/row sep=\\,
@@ -293,39 +443,48 @@ From these tests, an equivalent circuit model can be constructed, offering insig
     \end{axis}
 \end{tikzpicture}
 
-\subsection{Blocked Rotor}
+\subsection{Blocked Rotor Test}
 \begin{enumerate}
-    \item The connection is setup as shown below, block the rotor with a load cell.
+    \item The connection is set up as shown below. Block the rotor with a load cell.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{figure_6_6.jpeg}
+        \includegraphics[width=\linewidth]{figure_6_6.jpeg}
         \caption{Blocked rotor}
         \label{fig_6}
     \end{figure}
     \item Measure:
-    \begin{enumerate}[label=\roman*.]
-        \item the torque\\
-        \\
-        torque = 0.26 Nm
-        \item the force\\
-        \\
-        force = 0.96 kg
-        \item Mechanical Power Developed 
-         P(W) = T(Nm) $\omega$\\
-         \\
-         where $\omega = \frac{2 \pi n}{60}$\\
-         \\
-         using the least value of n at V = 50V\\
-         \\
-         n = 80 rpm\\
-         \\
-         $$\omega = \frac{2 . \pi . 80 }{60}$$
-         $$\omega = 8.3776$$
-         $$P = 0.26 . 8.3776$$
-         $$P = 2.178W$$
-         
-    \end{enumerate}
+    We determined the open circuit parameters of the machine under steady-state conditions as follows:
+
+The open circuit voltage was calculated as:
+\[
+V_{\text{oc}} = 90 \, \text{V} \quad \text{and} \quad I_{\text{oc}} = 90 \, \text{A}
+\]
+The line voltage is:
+\[
+V_{\text{L}} = \sqrt{3} \times V_{\text{oc}} = \sqrt{3} \times 51.96 = 90 \, \text{V}
+\]
+
+The no-load power is:
+\[
+P_0 = P_1 + P_2 + P_3 = 27.1 \, \text{W} + 28.3 \, \text{W} + 31.7 \, \text{W} = 87.1 \, \text{W}
+\]
+
+Now, we calculate the core loss resistance:
+\[
+R_{\text{core}} = \frac{V}{I} = \frac{90}{0.608} = 85.461 \, \Omega
+\]
+
+Next, the magnetizing reactance:
+\[
+X_{\text{m}} = \frac{3 \times V_{\text{oc}}}{2} = \frac{3 \times 0.608}{2} = 77.062 \, \Omega
+\]
+
+Finally, we calculate the total magnetizing reactance:
+\[
+X_{\text{m total}} = \sqrt{R_{\text{core}}^2 - X_{\text{m}}^2} = \sqrt{85.461^2 - 77.062^2} = 36.946 \, \Omega
+\]
 \end{enumerate}
+
 \chapter{Errors}
 
 In conducting practical tests on transformers and induction motors, various sources of errors can affect the accuracy of measurements and results. Key sources of errors in transformer and motor testing include:
