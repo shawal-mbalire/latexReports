@@ -11,6 +11,14 @@
 \usepackage{listings} % Code listings
 \usepackage{hyperref} % Hyperlinks
 \usepackage{color}    % Colors for code listings
+\usepackage{pgfplots} % Graphs
+\usepackage{hhline}   % Table placement
+\usepackage{circuitikz} % Circuits
+\usepackage{fancyhdr} % Headers and footers
+\usepackage{lastpage} % Last page reference
+\usepackage{pdflscape} % Landscape pages
+
+\pgfplotsset{compat=1.18}
 
 % Define custom colors
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -34,11 +42,11 @@
 \newpage
 
 \begin{abstract}
-    This is the abstract section of your lab report. Provide a brief summary of the objectives, methods, and key findings of your experiments.
+    This lab report investigates the characteristics and applications of semiconductor diodes, including their I-V behavior and use in rectification circuits.
 \end{abstract}
 
 \section{Introduction}
-% Your introduction content goes here.
+This report covers the study of diode characteristics through theoretical analysis and experimental measurements.
 
 \input{one.tex}
 \input{two.tex}
