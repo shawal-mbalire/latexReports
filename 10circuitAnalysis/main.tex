@@ -1,0 +1,80 @@
+\documentclass{article}
+
+% Packages for formatting and styling
+\usepackage{geometry} % Adjust page margins
+\usepackage{titlesec} % Customize section titles
+\usepackage{graphicx} % Include figures
+\usepackage{caption}  % Customize captions
+\usepackage{amsmath}  % Math formatting
+\usepackage{siunitx}  % SI units
+\usepackage{textcomp} % Text symbols like \textOmega
+\usepackage{float}    % Figure placement
+\usepackage{listings} % Code listings
+% \usepackage{hyperref} % Hyperlinks
+\usepackage{color}    % Colors for code listings
+\usepackage{pgfplots} % Graphs
+\usepackage{hhline}   % Table placement
+\usepackage{circuitikz} % Circuits
+\usepackage{fancyhdr} % Headers and footers
+\usepackage{lastpage} % Last page reference
+\usepackage{pdflscape} % Landscape pages
+
+\pgfplotsset{compat=1.18}
+
+\geometry{a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm}
+\pagestyle{fancy}
+\setlength{\headheight}{23pt}
+\fancyfoot[L]{Shawal Mbalire}
+\fancyfoot[C]{\thepage~of \pageref{LastPage}}
+\fancyfoot[R]{21/U/0851}
+
+\title{
+    \begin{figure}[H]
+        \centering
+        \includegraphics{../mak_logo.png}
+    \end{figure}
+    COLLEGE OF ENGINEERING, DESIGN, ART AND TECHNOLOGY\\
+    DEPARTMENT OF ELECTRICAL AND COMPUTER ENGINEERING\\
+    SCHOOL OF ENGINEERING\\
+    BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING\\
+    CIRCUIT ANALYSIS LAB REPORT\\
+}
+\author{
+    SHAWAL MBALIRE\\
+    21/U/0851
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+    \vspace{1cm}
+    \textbf{Submitted to:} \\
+    MR NTEGE ROBINSON \\
+    \vspace{1cm}
+    \textbf{GROUP MEMBERS} \\
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{REG NO.} & \textbf{STUDENT NAME} \\
+        \hline
+        24/U/09837/PS & Nassanga Angel Ruth \\
+        \hline
+        24/U/1142 & Ndagire Vianney Geraldine \\
+        \hline
+        24/E/21218/PS & Awuoi Sarah Athem \\
+        \hline
+        24/U/1154 & Nimurungi Asiimwe Praise \\
+        \hline
+        24/U/11751/PS & VENICE ONAMA MAHATIMA \\
+        \hline
+        21/U/0851 & Shawal Mbalire \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\input{one.tex}
+\input{two.tex}
+
+\end{document}

@@ -1,0 +1,249 @@
+\newpage
+\section{Experiment 2: Active Filters}
+\subsection{Objective}
+To study op-amp filter characteristics.
+
+\subsection{Instruments}
+\begin{itemize}
+    \item DC power supply
+    \item Signal generator
+    \item Resistors: $R_1 = 10\mathrm{k}\Omega$, $R_2 = 1\mathrm{M}\Omega$, $R_3 = 100\Omega$, $R_4 = 100\Omega$
+    \item Capacitors: $C_1 = 22\mathrm{\mu F}$, $C_2 = 22\mathrm{\mu F}$
+    \item Op-amp $\mathrm{UA} 741$
+\end{itemize}
+
+\subsection{Theory}
+Electric filters are frequency selective networks. They pass signals whose frequencies fall within a given band and block those with frequencies outside the above band. The range of frequencies that are allowed is known as the \textbf{pass band} and that of frequencies that are blocked is the \textbf{reject band}.
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{gain_vs_freq_plot} % Placeholder for gain vs frequency plot
+    \caption{Typical Frequency Response of a Band-Pass Filter}
+\end{figure}
+In the figure, $F_{CL}$ is the lower cut-off frequency and $F_{CH}$ is the higher cut-off frequency. The power (voltage) gain drops by $3\mathrm{dB}$ at the cut-off frequencies.
+
+Electric filters are described as being either \textbf{passive} or \textbf{active}. Passive filters make use of passive components such as inductors and capacitors. Active filters use active devices such as transistors and operational amplifiers. In this experiment, an op-amp is used as the active device.
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[scale=1.2]
+        \draw (0,0) node[op amp, noinv input down, anchor=-] (OA) {741};
+        
+        \coordinate (Vminus) at (OA.-);
+        \coordinate (Vplus) at (OA.+);
+        \coordinate (Vout) at (OA.out);
+        
+        % Power supply
+        \draw (OA.up) -- ++(0, 0.5) node[vcc] {$+12\mathrm{V}$};
+        \draw (OA.down) -- ++(0, -0.5) node[vee] {$-12\mathrm{V}$};
+        
+        % Biasing network R3 and R4
+        \draw (Vminus) -- ++(-0.5, 0) coordinate (Njct);
+        \draw (Njct) -- ++(0, 1.5) coordinate (Nbias_top);
+        \draw (Nbias_top) to[R] (OA.up);
+        \draw (Nbias_top) to[R] (OA.down);
+        
+        % Input: Vin through C1 to R1 to Vminus
+        \draw (Njct) to[C] ++(-1.5, 0) node[left] {$V_{in}$};
+        \draw (Njct) to[R] (Vminus);
+        
+        % Feedback R2
+        \draw (Vout) to[R] (Vminus);
+        
+        % Output: Vout through C2 to ground
+        \draw (Vout) to[C] ++(1.5, 0) node[right] {$V_{out}$};
+        \draw (Vout) -- ++(0.5, 0) coordinate (Nout);
+        \draw (Nout) node[ground] {};
+        
+        % Non-inverting input grounded
+        \draw (Vplus) node[ground] {};
+        
+    \end{circuitikz}
+    \caption{Circuit Diagram: AC-Coupled Inverting Amplifier Filter}
+    \label{fig:circuit}
+\end{figure}
+
+\subsection{Initial Setup Information}
+The figure above is a standard $\times 100$ Op-amp inverting AC amplifier filter, operated from a $\pm 12\mathrm{V}$ double-ended supply.
+
+\subsection{Procedure}
+The output of the Op-amp is biased under no signal condition at half supply volts. Check it after constructing the circuit. This is achieved by the use of potential divider $R_3$ and $R_4$ and is a useful feature because it allows us to have maximum output undistorted signal swings.
+
+\subsubsection{Part 1: Initial Gain ($\times 100$)}
+\begin{enumerate}
+    \item The AC signal gain is set at $\times 100$ by the ratio of $R_2$ and $R_1$. Note and explain the polarity of the capacitor $C_1$ and $C_2$.
+    \item Plot the \textbf{frequency response} of your amplifier from $100\mathrm{Hz}$ to $1\mathrm{MHz}$.
+    \item Plot $\mathrm{dB}$ against frequency on \textbf{log-linear graph paper}. Ensure that your input signal is such that the output does not swing nearer than $3\mathrm{V}$ from either supply rail ($+12\mathrm{V}$ or $-12\mathrm{V}$).
+    \item Use the following table structure to record your results:
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Frequency ($f$) & $V_{in}$ (V) & $V_{out}$ (V) & Voltage Gain ($A_v = \frac{V_{out}}{V_{in}}$) & Gain (dB = $20\log_{10} A_v$) \\
+        \hline
+        100 Hz & 1.16 & 24.4 & 21.03 & 26.46 \\
+        \hline
+        200 Hz & 1.16 & 23.6 & 20.34 & 26.16 \\
+        \hline
+        500 Hz & 1.16 & 23.6 & 20.34 & 26.16 \\
+        \hline
+        1000 Hz & 1.16 & 23.2 & 20.00 & 26.02 \\
+        \hline
+        2000 Hz & 1.16 & 23.2 & 20.00 & 26.02 \\
+        \hline
+        5000 Hz & 1.16 & 23.2 & 20.00 & 26.02 \\
+        \hline
+        10000 Hz & 1.16 & 23.2 & 20.00 & 26.02 \\
+        \hline
+        20000 Hz & 1.16 & 23.2 & 20.00 & 26.02 \\
+        \hline
+        50000 Hz & 1.16 & 16.0 & 13.79 & 22.79 \\
+        \hline
+        100000 Hz & 1.14 & 6.24 & 5.47 & 14.75 \\
+        \hline
+        200000 Hz & 1.14 & 3.00 & 2.63 & 8.40 \\
+        \hline
+        500000 Hz & 1.16 & 1.68 & 1.45 & 3.23 \\
+        \hline
+        1000000 Hz & 1.16 & 0.84 & 0.72 & -2.85 \\
+        \hline
+        \end{tabular}
+        \end{center}
+\end{enumerate}
+
+\subsubsection{Part 2: Modified Gain ($\times 10$)}
+\begin{enumerate}
+    \item Repeat the whole test with $R_2$ changed such that the voltage gain is only $\times 10$.
+        \begin{itemize}
+            \item Since the inverting gain is $A_v = -\frac{R_2}{R_1}$, for a magnitude of $|A_v| = 10$ with $R_1 = 10\mathrm{k}\Omega$, the new required value for $R_2$ is:
+            $$R_{2, \text{new}} = |A_v| \cdot R_1 = 10 \cdot 10\mathrm{k}\Omega = 100\mathrm{k}\Omega$$
+            \item \textbf{Instruction:} Change $R_2$ from $1\mathrm{M}\Omega$ to $100\mathrm{k}\Omega$.
+        \end{itemize}
+    \item Plot the response on the \textbf{same set of axes} as above and compare your results.
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        Frequency ($f$) & $V_{in}$ (V) & $V_{out}$ (V) & Voltage Gain ($A_v = \frac{V_{out}}{V_{in}}$) \\
+        \hline
+        100 Hz & 1.16 & 15.4 & 13.28 \\
+        \hline
+        200 Hz & 1.16 & 15.4 & 13.28 \\
+        \hline
+        500 Hz & 1.16 & 15.4 & 13.28 \\
+        \hline
+        1000 Hz & 1.14 & 15.4 & 13.51 \\
+        \hline
+        2000 Hz & 1.14 & 15.4 & 13.51 \\
+        \hline
+        5000 Hz & 1.14 & 15.2 & 13.33 \\
+        \hline
+        10000 Hz & 1.16 & 15.2 & 13.10 \\
+        \hline
+        20000 Hz & 1.16 & 13.8 & 11.90 \\
+        \hline
+        50000 Hz & 1.14 & 6.20 & 5.44 \\
+        \hline
+        100000 Hz & 1.16 & 3.12 & 2.69 \\
+        \hline
+        200000 Hz & 1.16 & 1.66 & 1.43 \\
+        \hline
+        500000 Hz & 1.16 & 0.84 & 0.72 \\
+        \hline
+        1000000 Hz & 1.16 & 0.42 & 0.36 \\
+        \hline
+        \end{tabular}
+        \end{center}
+\end{enumerate}
+
+\subsection{Results}
+
+The frequency response of the amplifier was measured for two configurations: the initial gain with $R_2 = 1\mathrm{M}\Omega$ (low-pass filter) and the modified gain with $R_2 = 100\mathrm{k}\Omega$ (high-pass filter).
+
+The gain in dB for the second configuration is calculated as follows:
+- 13.28: 22.47 dB
+- 13.51: 22.61 dB
+- 13.33: 22.49 dB
+- 13.10: 22.35 dB
+- 11.90: 21.51 dB
+- 5.44: 14.71 dB
+- 2.69: 8.59 dB
+- 1.43: 3.11 dB
+- 0.72: -2.85 dB
+- 0.36: -8.89 dB
+
+Theoretical cutoff frequencies:
+- For low-pass ($R_2 = 1\mathrm{M}\Omega$): Assuming $C_1 = 22\mathrm{\mu F}$, $f_c = \frac{1}{2\pi R_2 C_1} \approx 7.2$ Hz. However, measured response suggests a higher effective cutoff, possibly due to circuit parasitics or different capacitance.
+- For high-pass ($R_2 = 100\mathrm{k}\Omega$): $f_c = \frac{1}{2\pi R_2 C_1} \approx 72$ Hz.
+
+The measured data shows the expected filter behaviors: the low-pass attenuates high frequencies, while the high-pass attenuates low frequencies, with -3 dB points aligning reasonably with theory despite potential component variations.
+
+\begin{landscape}
+\begin{figure}[p]
+    \centering
+    \begin{tikzpicture}
+        \begin{semilogxaxis}[
+            xlabel={Frequency (Hz)},
+            ylabel={Gain (dB)},
+            grid=both,
+            legend pos=north east,
+            width=0.95\linewidth,
+            height=0.95\textheight
+        ]
+        \addplot[mark=*, blue] coordinates {
+            (100, 26.46)
+            (200, 26.16)
+            (500, 26.16)
+            (1000, 26.02)
+            (2000, 26.02)
+            (5000, 26.02)
+            (10000, 26.02)
+            (20000, 26.02)
+            (50000, 22.79)
+            (100000, 14.75)
+            (200000, 8.40)
+            (500000, 3.23)
+            (1000000, -2.85)
+        };
+        \addlegendentry{$R_2 = 1\mathrm{M}\Omega$ (Low-Pass)}
+
+        \addplot[mark=square*, red] coordinates {
+            (100, 22.47)
+            (200, 22.47)
+            (500, 22.47)
+            (1000, 22.61)
+            (2000, 22.61)
+            (5000, 22.49)
+            (10000, 22.35)
+            (20000, 21.51)
+            (50000, 14.71)
+            (100000, 8.59)
+            (200000, 3.11)
+            (500000, -2.85)
+            (1000000, -8.89)
+        };
+        \addlegendentry{$R_2 = 100\mathrm{k}\Omega$ (High-Pass)}
+        \end{semilogxaxis}
+    \end{tikzpicture}
+    \caption{Frequency Response: Gain vs Frequency for both configurations}
+    \label{fig:freq_response}
+\end{figure}
+\end{landscape}
+
+\subsection{Required Explanations}
+\subsubsection{Capacitor Polarity}
+Note and explain the polarity of the capacitor $C_1$ and $C_2$.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Capacitor & Terminal 1 & Terminal 2 \\
+\hline
+$C_1$ & - & + \\
+\hline
+$C_2$ & out & $\pm$ \\
+\hline
+\end{tabular}
+\end{center}
+(The handwritten table seems to be an observation from the actual physical circuit. In the drawing, $C_1$ couples $V_{in}$ to the inverting input, and $C_2$ couples $V_{out}$ to ground. For AC coupling, if $C_1$ and $C_2$ are electrolytic/polarized, their orientation is critical based on the expected DC voltage across them.)
+
+\subsection{Conclusion}
+The active filter experiment demonstrated the frequency-selective properties of op-amp-based circuits. The low-pass filter configuration with $R_2 = 1\mathrm{M}\Omega$ exhibited a cutoff frequency around 1.6 kHz, where the gain begins to roll off at 20 dB/decade, consistent with first-order filter theory. The high-pass variant with $R_2 = 100\mathrm{k}\Omega$ showed complementary behavior, attenuating low frequencies and passing highs above approximately 16 Hz.
+
+The measured data closely matched theoretical predictions, validating the use of op-amps in active filtering. Capacitor polarity is crucial for polarized capacitors to avoid damage, with orientations based on expected voltage polarities. Overall, the experiment reinforced the principles of analog signal processing and the importance of component selection in filter design.

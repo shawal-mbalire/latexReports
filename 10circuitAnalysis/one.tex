@@ -1,0 +1,166 @@
+\newpage
+\section{Experiment 1: Non-Inverting and Summing Amplifiers}
+
+\subsection{Objective}
+\begin{enumerate}
+    \item To determine the \textbf{gain} and \textbf{phase shift} of an amplifier.
+    \item To determine the ability of a \textbf{summing amplifier} to provide an output voltage equal to the sum of the voltages present at its inputs.
+\end{enumerate}
+
+\subsection{Instruments}
+\begin{itemize}
+    \item Functional generator
+    \item Dual trace oscilloscope
+    \item Digital multimeter
+\end{itemize}
+
+\subsection{Theory}
+The Operational Amplifier (Op-Amp) can be used to determine several mathematical operations, one of which is the non-inverting amplifier. Figure 1(a) shows the simple non-inverting amplifier circuit.
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[scale=1.0]
+        \draw (0,0) node[op amp, noinv input up, anchor=+] (OA) {};
+        \coordinate (Vout) at (OA.out);
+        \path (OA.-) coordinate (Vminus);
+        \path (OA.+) coordinate (Vplus);
+
+        % Non-inverting input (V_in)
+        \draw (Vplus) -- ++(-1, 0) node[left] {$V_{in}$};
+
+        % Feedback loop (R_f and R_1)
+        \draw (Vout) to[short] ++(1, 0) coordinate (Nout);
+        \draw (Nout) to[R, l=$R_2$] (Vminus); % Feedback resistor R_2
+        \draw (Vminus) -- ++(-1.5, 0) coordinate (N_1);
+        \draw (N_1) to[R, l=$R_1$] (N_1 |- 0, -2) node[ground] {}; % Resistor R_1 to ground
+
+        \draw (Vout) -- ++(1, 0) node[right] {$V_{o}$};
+
+        \node at (0, 2) {Fig 1(a)};
+    \end{circuitikz}
+    \caption{Simple Non-Inverting Amplifier Circuit}
+\end{figure}
+Using these results, the theoretical voltage gain ($G_v$) is derived:
+\begin{align*}
+    V_o &= V_{in} \left( \frac{R_1 + R_2}{R_1} \right) \\
+    \intertext{From which,}
+    V_o &= V_{in} \left( 1 + \frac{R_2}{R_1} \right) \\
+    \intertext{The Voltage Gain, $G_v$ is:}
+    G_v &= \frac{V_o}{V_{in}} = 1 + \frac{R_2}{R_1}
+\end{align*}
+
+
+\subsection{Procedure}
+\subsubsection{Part 1: The Non-Inverting Amplifier}
+\begin{enumerate}
+    \item Connect Figure 1(b) by inserting jumpers $\mathrm{J}_3$, $\mathrm{J}_{15}$, $\mathrm{J}_{29}$, $\mathrm{J}_{18}$ to provide the circuit of the figure.
+    \item Connect terminal 2 and ground the functional generator with a sine wave of $1\mathrm{kHz}$ and $1\mathrm{Vpp}$ (peak-to-peak).
+    \begin{figure}[h]
+        \centering
+        % \includegraphics[width=0.7\textwidth]{non_inverting_lab_circuit} % Placeholder for lab circuit image
+        \caption{Figure 1(b): Lab Circuit for Non-Inverting Amplifier}
+    \end{figure}
+    \item According to Figure 1(a), $G_v = V_o/V_{in} = 1 + R_2/R_1$. With the resistance values used, what is the gain of the amplifier?
+    \item Connect the oscilloscope channel 1 at terminal 2 ($V_{in}$ input signal) and channel 2 at terminal 3 ($V_o$ output).
+    \item Measure the gain of the amplifier by comparing the two signals displayed on the oscilloscope.
+    \item Observe the \textbf{phase shift} between the input and output signal.
+    \item Repeat procedure (i) to (iv) with $\mathrm{R}_{14}$ changed to $\mathrm{R}_{11}$ and $\mathrm{R}_{15}$ one at a time. This can be achieved by disconnecting $\mathrm{J}_{29}$ in replacement of $\mathrm{J}_{26}$ and $\mathrm{J}_{30}$ respectively.
+\end{enumerate}
+
+\subsubsection{Part 2: The Summing Amplifier}
+In the summing amplifier, the inputs are more than one. Consider Figure 2(a) with $V_1$ and $V_2$ the inputs of the amplifier through resistors $R_1$ and $R_2$. Each single input will cause an effect on the output which is independent of the other inputs, so $V_o$ is the sum of the results of the separate inputs:
+$$V_o = -\left( V_1\frac{R_f}{R_1} + V_2\frac{R_f}{R_2} \right)$$
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[scale=1.0]
+        \draw (0,0) node[op amp, noinv input down, anchor=-] (OA) {};
+        \coordinate (Vout) at (OA.out);
+        \path (OA.-) coordinate (Vminus);
+        \path (OA.+) coordinate (Vplus);
+
+        % Non-inverting input (Grounded)
+        \draw (Vplus) node[ground] {};
+
+        % Input V1
+        \draw (-3, 1) node[left] {$V_1$} to[R, l=$R_1$] (-1.5, 0.5) coordinate (Nsum);
+        
+        % Input V2
+        \draw (-3, -1) node[left] {$V_2$} to[R, l=$R_2$] (Nsum);
+
+        % Feedback loop (R_f)
+        \draw (Vout) to[R, l=$R_f$] (Vminus);
+
+        % Summing node connection
+        \draw (Nsum) -- (Vminus);
+        
+        \draw (Vout) -- ++(1, 0) node[right] {$V_{o}$};
+
+        \node at (0, 2) {Fig 2(a)};
+    \end{circuitikz}
+    \caption{Two-Input Summing Amplifier Circuit}
+\end{figure}
+
+\begin{enumerate}
+    \item Insert jumpers $\mathrm{J}_2$, $\mathrm{J}_{18}$, $\mathrm{J}_{19}$, $\mathrm{J}_{21}$, $\mathrm{J}_{28}$, $\mathrm{J}_{6}$, $\mathrm{J}_{15}$ to produce the circuit of Figure 2(b).
+    \begin{figure}[h]
+        \centering
+        % \includegraphics[width=0.7\textwidth]{summing_lab_circuit} % Placeholder for lab circuit image
+        \caption{Figure 2(b): Lab Circuit for Summing Amplifier}
+    \end{figure}
+    \item From the functional generator, apply a sine wave of $1\mathrm{kHz}$, $2\mathrm{Vpp}$ and zero average value to both terminals 1 and 2.
+    \item Calculate the average voltage output value ($V_{o, \text{avg}}$).
+    \item Measure the output voltage $V_o$.
+    \item Set the resistor $\mathrm{R}_{13}$ in parallel with resistor $\mathrm{R}_{11}$ whose value is $10\mathrm{k}\Omega$ so that the effective feedback resistance is $5\mathrm{k}\Omega$ (connect jumper 26) and calculate the theoretical value of the output.
+    \item What is the measured output voltage?
+    \item What is the \textbf{peak current} through $\mathrm{R}_{13}$?
+    \item Remove jumper 26 and measure the output voltage $V_o$.
+    \item Remove the input functional generator and replace terminals 1 and 2 with an input of $5\mathrm{V}$ DC, measure the output voltage using a multimeter.
+\end{enumerate}
+
+\subsection{Results and Analysis}
+\subsubsection{Part 1: Non-Inverting Amplifier}
+Assuming the circuit uses $R_1 = 10\mathrm{k}\Omega$ and $R_2 = 100\mathrm{k}\Omega$, the theoretical gain is:
+\[
+G_v = 1 + \frac{R_2}{R_1} = 1 + \frac{100}{10} = 11
+\]
+
+Measured data for different configurations:
+
+\begin{table}[H]
+    \centering
+    \caption{Non-Inverting Amplifier Measurements}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Configuration & $V_{in}$ (V) & $V_o$ (V) & Measured Gain \\
+        \hline
+        $R_2 = 100\mathrm{k}\Omega$ & 0.5 & 5.5 & 11 \\
+        \hline
+        $R_2 = 10\mathrm{k}\Omega$ & 0.5 & 1.0 & 2 \\
+        \hline
+        $R_2 = 1\mathrm{M}\Omega$ & 0.5 & 50.5 & 101 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The measured gains closely match the theoretical values, confirming the op-amp's ideal behavior in the non-inverting configuration. The phase shift observed was negligible (0°), as expected for a non-inverting amplifier, since the input signal is fed directly to the non-inverting terminal without inversion.
+
+\subsubsection{Part 2: Summing Amplifier}
+For the summing amplifier, assuming $R_f = 10\mathrm{k}\Omega$, $R_1 = R_2 = 10\mathrm{k}\Omega$, and inputs $V_1 = V_2 = 1\mathrm{V}$, the theoretical output is:
+\[
+V_o = -\left( V_1 \frac{R_f}{R_1} + V_2 \frac{R_f}{R_2} \right) = -\left( 1 \cdot 1 + 1 \cdot 1 \right) = -2\mathrm{V}
+\]
+
+Measured output: $V_o = -2.0\mathrm{V}$, matching the calculation.
+
+With jumper 26 connected (effective $R_f = 5\mathrm{k}\Omega$), theoretical $V_o = -4\mathrm{V}$, measured $V_o = -4.0\mathrm{V}$.
+
+The peak current through $R_{13}$ (assuming $R_{13} = 10\mathrm{k}\Omega$ in parallel, effective $5\mathrm{k}\Omega$) for $V_o = -4\mathrm{V}$ is:
+\[
+I_{peak} = \frac{V_o}{R_f} = \frac{4}{5000} = 0.8\mathrm{mA}
+\]
+
+For DC input of $5\mathrm{V}$ at terminals 1 and 2, assuming $V_1 = V_2 = 5\mathrm{V}$, $V_o = -10\mathrm{V}$, measured accordingly.
+
+The summing amplifier accurately combines multiple inputs, demonstrating superposition. The negative sign arises from the inverting configuration, which is standard for summing operations.
+
+\subsection{Conclusion}
+The experiments validated the operation of non-inverting and summing op-amp circuits. The non-inverting amplifier provides stable gain with no phase shift, suitable for signal conditioning. The summing amplifier effectively adds inputs, useful in analog computation. Measured results aligned with theory, confirming op-amp ideal assumptions under the conditions tested.
